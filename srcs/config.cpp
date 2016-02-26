@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "all.h"
-#include <stdlib.h>
 
 int	config_infos::check_if_config_exist(void)
 {
@@ -53,7 +52,27 @@ vector<program> config_infos::get_config_value(vector<program> program_list, vec
 	int		i = 0;
 	bool	taskmaster_var = true;
 
-	while (data[i] != data.size())
+	while (i != data.size())
+	{
+		if (taskmaster_var)
+		{
+			if (data[i][0] == VAR_SYNTHAX)
+				handle_taskmaster_var(data[i], i);
+			else if (data[i][0] == NEW_PROGRAM_SYNTHAX)
+			{
+				// handle new program;
+				taskmaster_var = false;
+			}
+		}
+		else
+		{
+			if (data[i][0] == NEW_PROGRAM_SYNTHAX)
+			{
+
+			}
+		}
+		i++;
+	}
 	return (program_list);
 }
 

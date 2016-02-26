@@ -1,6 +1,6 @@
 [taskmaster]
 %taskmaster_log_file;~/Desktop/work/log/taskmaster.log-
-
+//gewgew
 #new_program{test}
 (
 	%executable_path;/bin/ls-

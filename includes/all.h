@@ -16,6 +16,7 @@
 #include <fstream>
 #include <vector>
 # define VAR_SYNTHAX '%'
+# define NEW_PROGRAM_SYNTHAX '#'
 using namespace std;
 class program
 {
@@ -31,6 +32,12 @@ class program
 	string  working_dir;
 };
 
+class taskmaster_var
+{
+	public:
+	string taskmaster_log_file;
+};
+
 class config_infos
 {
 	public:
@@ -41,6 +48,7 @@ class config_infos
 };
 
 void	handle_config(string config_name);
+void	handle_taskmaster_var(string line, int position);
 
 /*
 				vector<program> program_list;
@@ -49,4 +57,5 @@ void	handle_config(string config_name);
 				program_list.push_back(new_prog);
 				cout << program_list[0].program_name;
 */
+static taskmaster_var taskmaster_value;
 #endif

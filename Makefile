@@ -18,7 +18,7 @@ INCLUDE_FOLDER = includes/
 
 FILE_EXTENSION = cpp
 
-SRCS_FILE = $(SRCS_PATH)/main.cpp $(SRCS_PATH)/config.cpp $(SRCS_PATH)/handle_config.cpp
+SRCS_FILE = $(SRCS_PATH)/main.cpp $(SRCS_PATH)/config.cpp $(SRCS_PATH)/handle_config.cpp $(SRCS_PATH)/handle_taskmaster_var.cpp
 
 ALL_O_FILE = $(notdir $(SRCS_FILE))
 
