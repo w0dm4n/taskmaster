@@ -37,13 +37,13 @@ void	handle_taskmaster_var(string line, int position)
 		}
 		else
 		{
-			cerr << "taskmaster configuration: error on the line " << position << ": "<< endl;
+			cerr << "taskmaster configuration: error at the line " << position << ": "<< endl;
 			cerr << "Unknown variable " << args[0] << endl;
 		}
 	}
 	else
 	{
-		cerr << "taskmaster configuration: error on the line " << position << ": "<< endl;
+		cerr << "taskmaster configuration: error at the line " << position << ": "<< endl;
 		cerr << "missing or invalid variable name" << endl;
 	}
 }
