@@ -89,6 +89,11 @@ vector<program> config_infos::read_config(vector<program> program_list)
 	{
 		while (getline(flux, buff))
 			config_content.push_back(buff);
+		if (!config_content.size())
+		{
+			cerr << "taskmaster: empty configuration file" << endl;
+			return (program_list);
+		}
 		if (config_content[0] != "[taskmaster]" ||
 		 config_content[(config_content.size() - 1)] != "[end_taskmaster]")
 		{

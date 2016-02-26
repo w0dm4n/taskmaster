@@ -26,7 +26,7 @@ ALL_O_FILE_SUITE = $(ALL_O_FILE:.$(FILE_EXTENSION)=.o)
 
 HEADER_PATH = ./includes/
 
-FLAGS = 
+FLAGS = -ggdb
 
 all: $(NAME)
 
