@@ -12,8 +12,32 @@
 
 #include <all.h>
 
-int		main(void)
+int		main(int argc, char **argv)
 {
-	std::cout << "Bonjour\n";
+	int i;
+	int	args;
+
+	i = 0;
+	args = 0;
+	while (argv[i])
+	{
+		if (argv[i][0] == '-')
+		{
+			args++;
+			cout << "args\n";
+		}
+		else
+		{
+			if (args)
+			{
+				stderr << "taskmaster : bad syntax\n";
+				return (-1);
+			}
+			else
+			{
+				cout << "configuration file\n"
+			}
+		}
+	}
 	return (0);
 }
