@@ -1,14 +1,14 @@
 [taskmaster]
-%taskmaster_log_file;~/Desktop/work/log/taskmaster.log-
+%taskmaster_log_file;;
 //gewgew
 #new_program{test}
 (
-	%executable_path;/bin/ls-
-	%executable_argument;-l -R-
-	%set_env;test;blabla-
-	%auto_start;1;10- // second argument time before autorun
-	%exit_signal;SIGINT-
-	%stderror_to_file;~/Desktop/work/log/$program_name.log-
-	%working_dir;~/Desktop/work/taskmaster-
+	%executable_path;/bin/ls;
+	%executable_argument;-l -R;
+	%set_env;test;blabla;
+	%auto_start;1;10; // second argument time before autorun
+	%exit_signal;SIGINT;
+	%stderror_to_file;~/Desktop/work/log/$program_name.log;
+	%working_dir;~/Desktop/work/taskmaster;
 )
 [end_taskmaster]

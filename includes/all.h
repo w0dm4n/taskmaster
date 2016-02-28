@@ -49,6 +49,9 @@ class config_infos
 
 void	handle_config(string config_name);
 void	handle_taskmaster_var(string line, int position);
+char	**ft_strsplit(char const *s, char c);
+int		ft_strlen(const char *str);
+void	print_error(int position, string message);
 
 /*
 				vector<program> program_list;
