@@ -52,6 +52,13 @@ static	string get_correct_path(string path)
 	return (path);
 }
 
+int		get_variable_state(string var)
+{
+	if (var == "taskmaster_log_file")
+		return (LOG_FILE);
+	return (UNKNOWN_VARIABLE);
+}
+
 void	handle_taskmaster_var(string line, int position)
 {
 	vector<string>	args;
@@ -61,17 +68,26 @@ void	handle_taskmaster_var(string line, int position)
 	args = get_args(line, args);
 	if (args.size())
 	{
-		if (args[0] == "taskmaster_log_file")
+		switch (get_variable_state(args[0]))
 		{
-			if (args[1].length())
-			{
+			case LOG_FILE:
+				if (args[1].length())
+				{
+					args[1] = get_correct_path(args[1]);
+					ifstream file(args[1]);
+					if (file)
+						TaskMasterValue::Current().LogFilePath = args[1];
+					else
+						print_error(position, "path of the log file is invalid !");
+				}
+				else
+					print_error(position, "path of the log file is missing !");
+			break;
 
-			}
-			else
-				print_error(position, "path of the log file is missing !");
-		}
-		else
-			print_error(position, "Unknown variable " + args[0]);
+			default:
+				print_error(position, "Unknown variable " + args[0]);
+			break;		
+		}		
 	}
 	else
 		print_error(position, "missing or invalid variable name");

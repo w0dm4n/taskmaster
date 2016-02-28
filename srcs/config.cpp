@@ -73,6 +73,7 @@ vector<program> config_infos::get_config_value(vector<program> program_list, vec
 		}
 		i++;
 	}
+	//cout << TaskMasterValue::Current().LogFilePath << endl;
 	return (program_list);
 }
 

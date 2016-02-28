@@ -16,4 +16,5 @@ void	print_error(int position, string message)
 {
 	cerr << "taskmaster configuration: error at the line " << position << ": "<< endl;
 	cerr << message << endl;
+	exit(0);
 }

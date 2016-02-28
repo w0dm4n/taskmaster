@@ -17,6 +17,8 @@
 #include <vector>
 # define VAR_SYNTHAX '%'
 # define NEW_PROGRAM_SYNTHAX '#'
+# define LOG_FILE 0
+# define UNKNOWN_VARIABLE 666
 using namespace std;
 class program
 {
@@ -32,10 +34,15 @@ class program
 	string  working_dir;
 };
 
-class taskmaster_var
+class TaskMasterValue
 {
 	public:
-	string taskmaster_log_file;
+    static TaskMasterValue &Current()
+    {
+        static TaskMasterValue Singleton;
+        return Singleton;
+    }
+    string LogFilePath;
 };
 
 class config_infos
@@ -60,5 +67,4 @@ void	print_error(int position, string message);
 				program_list.push_back(new_prog);
 				cout << program_list[0].program_name;
 */
-static taskmaster_var taskmaster_value;
 #endif
