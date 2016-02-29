@@ -52,7 +52,7 @@ static	string get_correct_path(string path)
 	return (path);
 }
 
-int		get_variable_state(string var)
+static int		get_variable_state(string var)
 {
 	if (var == "taskmaster_log_file")
 		return (LOG_FILE);

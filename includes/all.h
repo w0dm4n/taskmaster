@@ -19,6 +19,11 @@
 # define NEW_PROGRAM_SYNTHAX '#'
 # define LOG_FILE 0
 # define UNKNOWN_VARIABLE 666
+# define EXECUTABLE_PATH 10
+# define EXECUTABLE_ARGUMENT 11
+# define SET_ENV 12
+# define WORKING_DIR 13
+# define AUTO_START 14
 using namespace std;
 class program
 {
