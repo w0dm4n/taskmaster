@@ -75,8 +75,6 @@ static program		check_variable_and_set(string line, program tmp, int position)
 			case AUTO_START:
 				if (args[1] == "true")
 					tmp.auto_start = true;
-				else
-					tmp.auto_start = false;
 			break;
 
 			default:

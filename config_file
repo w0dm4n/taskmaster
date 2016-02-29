@@ -9,6 +9,8 @@
 	%auto_start;true;
 	//%exit_signal;SIGINT;
 	//%stderror_to_file;~/Desktop/work/log/$program_name.log;
+	//%stdout_to_file;~/blabla
+	//%set_umask;777
 )
 #new_program{bonjour}
 (
