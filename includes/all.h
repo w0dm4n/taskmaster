@@ -32,7 +32,7 @@ class program
 	string	executable_path;
 	string	executable_argument;
 	string	env_to_set;
-	int		auto_start;
+	bool	auto_start;
 	string	exit_signal_to_set;
 	string	stderror;
 	string  stdout;

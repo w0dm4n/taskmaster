@@ -38,47 +38,45 @@ static program		check_variable_and_set(string line, program tmp, int position)
 		{
 			case EXECUTABLE_PATH:
 				i++;
-				while (i != (args.size() - 1))
+				/*while (i != (args.size() - 1))
 				{
 					cout << args[i] << endl;
 					i++;
-				}
+				}*/
 			break;
 
 			case EXECUTABLE_ARGUMENT:
 				i++;
-				while (i != (args.size() - 1))
+				/*while (i != (args.size() - 1))
 				{
 					cout << args[i] << endl;
 					i++;
-				}
+				}*/
 			break;
 
 			case SET_ENV:
 				i++;
-				while (i != (args.size() - 1))
+				/*while (i != (args.size() - 1))
 				{
 					cout << args[i] << endl;
 					i++;
-				}
+				}*/
 			break;
 
 			case WORKING_DIR:
 				i++;
-				while (i != (args.size() - 1))
+				/*while (i != (args.size() - 1))
 				{
 					cout << args[i] << endl;
 					i++;
-				}
+				}*/
 			break;
 
 			case AUTO_START:
-				i++;
-				while (i != (args.size() - 1))
-				{
-					cout << args[i] << endl;
-					i++;
-				}
+				if (args[1] == "true")
+					tmp.auto_start = true;
+				else
+					tmp.auto_start = false;
 			break;
 
 			default:
@@ -98,6 +96,7 @@ program		get_program_args(int start, vector<string> data, int end, string name)
 	if (!name.length())
 		print_error(start, "program name missing !");
 	tmp.program_name = name;
+	tmp.auto_start = false;
 	while (start != end)
 	{
 		tmp = check_variable_and_set(data[start], tmp, (start + 2));

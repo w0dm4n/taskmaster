@@ -10,4 +10,15 @@
 	//%exit_signal;SIGINT;
 	//%stderror_to_file;~/Desktop/work/log/$program_name.log;
 )
+#new_program{bonjour}
+(
+	%auto_start;true;
+)
+#new_program{bonsoir}
+(
+	%auto_start;true;
+)
+#new_program{cava}
+(
+)
 [end_taskmaster]
