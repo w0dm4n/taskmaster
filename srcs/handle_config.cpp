@@ -20,11 +20,11 @@ void	handle_config(string config_name)
 	config.config_file_name = config_name;
 	if (config.check_if_config_exist())
 		program_list = config.read_config(program_list);
-	int i = 0;
+	/*int i = 0;
 	while (i != program_list.size())
 	{
 		if (program_list[i].auto_start)
 			cout << program_list[i].program_name << endl;
 		i++;
-	}
+	}*/
 }
