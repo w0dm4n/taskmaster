@@ -59,6 +59,9 @@ void	handle_taskmaster_var(string line, int position);
 char	**ft_strsplit(char const *s, char c);
 int		ft_strlen(const char *str);
 void	print_error(int position, string message);
+program		get_new_program(vector<string> data, int i);
+vector<string> get_args(string line, vector<string> args, char delimiter);
+program		get_program_args(int start, vector<string> data, int end, string name);
 
 /*
 				vector<program> program_list;

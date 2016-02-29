@@ -12,14 +12,14 @@
 
 #include "all.h"
 
-static vector<string> get_args(string line, vector<string> args)
+vector<string> get_args(string line, vector<string> args, char delimiter)
 {
 	char	**args_tmp;
 	int		i;
 
 	i = 0;
 	line = line.substr(1, line.length());
-	args_tmp = ft_strsplit(line.c_str(), ';');
+	args_tmp = ft_strsplit(line.c_str(), delimiter);
 	while (args_tmp[i])
 	{
 		args.push_back(args_tmp[i]);
@@ -65,7 +65,7 @@ void	handle_taskmaster_var(string line, int position)
 	int				i = 0;
 
 	position += 2;
-	args = get_args(line, args);
+	args = get_args(line, args, ';');
 	if (args.size())
 	{
 		switch (get_variable_state(args[0]))

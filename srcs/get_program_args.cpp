@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_config.cpp                                  :+:      :+:    :+:   */
+/*   get_program_args.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frmarinh <frmarinh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 03:03:15 by frmarinh          #+#    #+#             */
-/*   Updated: 2016/02/26 03:03:16 by frmarinh         ###   ########.fr       */
+/*   Created: 2016/02/29 02:18:17 by frmarinh          #+#    #+#             */
+/*   Updated: 2016/02/29 02:18:19 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "all.h"
 
-void	handle_config(string config_name)
+program		get_program_args(int start, vector<string> data, int end, string name)
 {
-	config_infos config;
-	vector<program> program_list;
+	program tmp;
 
-	config.config_file_name = config_name;
-	if (config.check_if_config_exist())
-		program_list = config.read_config(program_list);
-	/*int i = 0;
-	while (i != program_list.size())
+	name = name.substr(1, name.length());
+	name = name.substr(0, (name.length() - 1));
+	if (!name.length())
+		print_error(start, "program name missing !");
+	tmp.program_name = name;
+	while (start != end)
 	{
-		cout << program_list[i].program_name << endl;
-		i++;
-	}*/
+		cout << data[start] << endl;
+		start++;
+	}
+	return (tmp);
 }

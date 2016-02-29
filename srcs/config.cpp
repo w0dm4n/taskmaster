@@ -15,6 +15,7 @@
 int	config_infos::check_if_config_exist(void)
 {
 	ifstream flux(this->config_file_name);
+	//do stat here
 	if (flux)
 		return (1);
 	else
@@ -54,26 +55,15 @@ vector<program> config_infos::get_config_value(vector<program> program_list, vec
 
 	while (i != data.size())
 	{
-		if (taskmaster_var)
+		if (data[i][0] == VAR_SYNTHAX && taskmaster_var)
+			handle_taskmaster_var(data[i], i);
+		else if (data[i][0] == NEW_PROGRAM_SYNTHAX)
 		{
-			if (data[i][0] == VAR_SYNTHAX)
-				handle_taskmaster_var(data[i], i);
-			else if (data[i][0] == NEW_PROGRAM_SYNTHAX)
-			{
-				// handle new program;
-				taskmaster_var = false;
-			}
-		}
-		else
-		{
-			if (data[i][0] == NEW_PROGRAM_SYNTHAX)
-			{
-
-			}
+			program_list.push_back(get_new_program(data, i));
+			taskmaster_var = false;
 		}
 		i++;
 	}
-	//cout << TaskMasterValue::Current().LogFilePath << endl;
 	return (program_list);
 }
 
