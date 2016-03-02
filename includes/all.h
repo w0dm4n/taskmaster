@@ -25,19 +25,29 @@
 # define SET_ENV 12
 # define WORKING_DIR 13
 # define AUTO_START 14
+# define SET_UMASK 15
+# define STDERROR_TO 16
+# define STDOUT_TO 17
+# define STDERROR_CLOSE 18
+# define STDOUT_CLOSE 19
 using namespace std;
 class program
 {
 	public:
-	string	program_name;
-	string	executable_path;
-	string	executable_argument;
-	string	env_to_set;
-	bool	auto_start;
-	string	exit_signal_to_set;
-	string	stderror;
-	string  stdout;
-	string  working_dir;
+	string			program_name;
+	string			executable_path;
+	string			executable_argument;
+	vector<string>	env_to_set;
+	bool			auto_start;
+	string			exit_signal_to_set;
+	string			stderror;
+	string  		stdout;
+	string  		working_dir;
+	string			set_umask;
+	string			stderror_to_file;
+	string			stdout_to_file;
+	bool			close_stdout;
+	bool			close_stderror;
 };
 
 class TaskMasterValue
@@ -69,6 +79,7 @@ void	print_error(int position, string message);
 program		get_new_program(vector<string> data, int i);
 vector<string> get_args(string line, vector<string> args, char delimiter);
 program		get_program_args(int start, vector<string> data, int end, string name);
+string 		get_correct_path(string path);
 
 /*
 				vector<program> program_list;

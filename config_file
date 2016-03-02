@@ -5,12 +5,15 @@
 	%executable_path;/bin/ls;
 	%executable_argument;-l -R;
 	%set_env;test;blabla;
-	%working_dir;~/Desktop/work/taskmaster;
+	%set_env;tamer;bonjour;
+	%working_dir;~/Desktop/work/alcu;
 	%auto_start;true;
 	//%exit_signal;SIGINT;
-	//%stderror_to_file;~/Desktop/work/log/$program_name.log;
-	//%stdout_to_file;~/blabla
-	//%set_umask;777
+	%stderror_to_file;~/Desktop/work/log/$program_name.log;
+	%stdout_to_file;~/blabla
+	//close_stdout;true
+	//close_stderror;true
+	%set_umask;777
 )
 #new_program{bonjour}
 (

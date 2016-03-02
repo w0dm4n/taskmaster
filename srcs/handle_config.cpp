@@ -21,10 +21,17 @@ void	handle_config(string config_name)
 	if (config.check_if_config_exist())
 		program_list = config.read_config(program_list);
 	/*int i = 0;
+	int env = 0;
 	while (i != program_list.size())
 	{
-		if (program_list[i].auto_start)
-			cout << program_list[i].program_name << endl;
+		if (program_list[i].auto_start && program_list[i].env_to_set.size())
+		{
+			while (env != program_list[i].env_to_set.size())
+			{
+				cout << program_list[i].env_to_set[env] << endl;
+				env++;
+			}
+		}
 		i++;
 	}*/
 }

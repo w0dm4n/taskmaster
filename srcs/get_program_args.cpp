@@ -24,6 +24,16 @@ static int			get_variable_state(string var)
 		return (WORKING_DIR);
 	else if (var == "auto_start")
 		return (AUTO_START);
+	else if (var == "set_umask")
+		return (SET_UMASK);
+	else if (var == "stderror_to_file")
+		return (STDERROR_TO);
+	else if (var == "stdout_to_file")
+		return (STDOUT_TO);
+	else if (var == "close_stderror")
+		return (STDERROR_CLOSE);
+	else if (var == "close_stdout")
+		return (STDOUT_CLOSE);
 	return (UNKNOWN_VARIABLE);
 }
 
@@ -37,8 +47,7 @@ static program		check_variable_and_set(string line, program tmp, int position)
 		switch (get_variable_state(args[0]))
 		{
 			case EXECUTABLE_PATH:
-				i++;
-				if (args.size() == 2 || args.size() == 3)
+				if (args.size() == 3)
 				{
 					if (args[1].length())
 					{
@@ -51,7 +60,7 @@ static program		check_variable_and_set(string line, program tmp, int position)
 							print_error(-1, "taskmaster: executable path file set is a directory...");
 						else if (S_ISLNK(executable_path->st_mode))
 							print_error(-1, "taskmaster: executable path file set is a symoblic link...");
-						if (!executable_path->st_mode & S_IRUSR)
+						if (!(executable_path->st_mode & S_IRUSR))
 							print_error(-1, "taskmaster: permission denied on the executable path");
 						tmp.executable_path = args[1];
 					}
@@ -63,35 +72,124 @@ static program		check_variable_and_set(string line, program tmp, int position)
 			break;
 
 			case EXECUTABLE_ARGUMENT:
-				i++;
-				/*while (i != (args.size() - 1))
+				if (args.size() == 3)
 				{
-					cout << args[i] << endl;
-					i++;
-				}*/
+					if (args[1].length())
+						tmp.executable_argument = args[1];
+					else
+						print_error(position, "taskmaster: executable_argument variable set but arguments are missing");
+				}
+				else
+					print_error(position, "taskmaster: executable_argument bad syntax");
 			break;
 
 			case SET_ENV:
-				i++;
-				/*while (i != (args.size() - 1))
+				if (args.size() == 4)
 				{
-					cout << args[i] << endl;
-					i++;
-				}*/
+					if (args[1].length() && args[2].length())
+						tmp.env_to_set.push_back(args[1] + "," + args[2]);
+					else
+						print_error(position, "taskmaster: set_env missing arguments");
+				}
+				else
+					print_error(position, "taskmaster: set_env bad syntax");
 			break;
 
 			case WORKING_DIR:
-				i++;
-				/*while (i != (args.size() - 1))
+				if (args.size() == 3)
 				{
-					cout << args[i] << endl;
-					i++;
-				}*/
+					if (args[1].length())
+					{
+						struct stat *work_dir;
+						if (!(work_dir = (struct stat*)malloc(sizeof(struct stat))))
+							return (tmp);
+						args[1] = get_correct_path(args[1]);
+						if (lstat(args[1].c_str(), work_dir) < 0)
+							print_error(position, "taskmaster: working dir path invalid");
+						if (S_ISLNK(work_dir->st_mode))
+							print_error(-1, "taskmaster: working dir path set is a symoblic link...");
+						if (!(work_dir->st_mode & S_IRUSR))
+							print_error(-1, "taskmaster: permission denied on the working dir path");
+						if (S_ISDIR(work_dir->st_mode))
+							tmp.working_dir = args[1];
+					}
+					else
+						print_error(position, "taskmaster: working_dir variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: working_dir bad syntax");
 			break;
 
 			case AUTO_START:
 				if (args[1] == "true")
 					tmp.auto_start = true;
+			break;
+
+			case SET_UMASK:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+						// check if the umask to set is valid
+						tmp.set_umask = args[1];
+					}
+					else
+						print_error(position, "taskmaster: set_umask variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: set_umask bad syntax");
+			break;
+
+			case STDERROR_TO:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+
+					}
+					else
+						print_error(position, "taskmaster: stderror_to_file variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: stderror_to_file bad syntax");
+			break;
+
+			case STDOUT_TO:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+
+					}
+					else
+						print_error(position, "taskmaster: stdout_to_file variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: stdout_to_file bad syntax");
+			break;
+
+			case STDERROR_CLOSE:
+				if (args.size() == 3)
+				{
+					if (args[1] == "true")
+						tmp.close_stderror = true;
+					else 
+						tmp.close_stderror = false;
+				}
+				else
+					print_error(position, "taskmaster: close_stdout bad syntax");
+			break;
+
+			case STDOUT_CLOSE:
+				if (args.size() == 3)
+				{
+					if (args[1] == "true")
+						tmp.close_stdout = true;
+					else
+						tmp.close_stdout = false;
+				}
+				else
+					print_error(position, "taskmaster: close_stderror bad syntax");
 			break;
 
 			default:

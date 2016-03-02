@@ -29,7 +29,7 @@ vector<string> get_args(string line, vector<string> args, char delimiter)
 	return (args);
 }
 
-static	string get_correct_path(string path)
+string get_correct_path(string path)
 {
 	int i;
 	bool found = false;
