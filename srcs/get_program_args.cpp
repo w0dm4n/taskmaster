@@ -47,6 +47,13 @@ static program		check_variable_and_set(string line, program tmp, int position)
 							return (tmp);
 						if (lstat(args[1].c_str(), executable_path) < 0)
 							print_error(position, "taskmaster: executable path invalid");
+						if (S_ISDIR(executable_path->st_mode))
+							print_error(-1, "taskmaster: executable path file set is a directory...");
+						else if (S_ISLNK(executable_path->st_mode))
+							print_error(-1, "taskmaster: executable path file set is a symoblic link...");
+						if (!executable_path->st_mode & S_IRUSR)
+							print_error(-1, "taskmaster: permission denied on the executable path");
+						tmp.executable_path = args[1];
 					}
 					else
 						print_error(position, "taskmaster: executable path argument missing");
