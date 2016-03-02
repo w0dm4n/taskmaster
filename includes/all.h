@@ -40,8 +40,6 @@ class program
 	vector<string>	env_to_set;
 	bool			auto_start;
 	string			exit_signal_to_set;
-	string			stderror;
-	string  		stdout;
 	string  		working_dir;
 	string			set_umask;
 	string			stderror_to_file;
