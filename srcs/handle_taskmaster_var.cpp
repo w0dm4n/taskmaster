@@ -59,6 +59,36 @@ static int		get_variable_state(string var)
 	return (UNKNOWN_VARIABLE);
 }
 
+static bool check_log_file_path(string full_path)
+{
+	struct stat *log_file;
+
+	if (!(log_file = (struct stat*)malloc(sizeof(struct stat))))
+		return (false);
+	if (lstat(full_path.c_str(), log_file) < 0)
+	{
+		TaskMasterValue::Current().LogFilePathExist = false;
+		return (true);
+	}
+	if (S_ISDIR(log_file->st_mode))
+	{
+		print_error(-1, "taskmaster: taskmaster log file set is a directory...");
+		return (false);
+	}
+	else if (S_ISLNK(log_file->st_mode))
+	{
+		print_error(-1, "taskmaster: taskmaster log file set is a symoblic link...");
+		return (false);
+	}
+	if (log_file->st_mode & S_IRUSR)
+		return (true);
+	else
+	{
+		print_error(-1, "taskmaster: permission denied on the taskmaster log file");
+		return (false);
+	}
+}
+
 void	handle_taskmaster_var(string line, int position)
 {
 	vector<string>	args;
@@ -74,8 +104,7 @@ void	handle_taskmaster_var(string line, int position)
 				if (args[1].length())
 				{
 					args[1] = get_correct_path(args[1]);
-					ifstream file(args[1]);
-					if (file)
+					if (check_log_file_path(args[1]))
 						TaskMasterValue::Current().LogFilePath = args[1];
 					else
 						print_error(position, "path of the log file is invalid !");

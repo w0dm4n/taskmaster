@@ -14,16 +14,32 @@
 
 int	config_infos::check_if_config_exist(void)
 {
-	ifstream flux(this->config_file_name);
-	//do stat here
-	if (flux)
+	struct stat *config;
+
+	if (!(config = (struct stat*)malloc(sizeof(struct stat))))
+		return (-1);
+	if (lstat(this->config_file_name.c_str(), config) < 0)
+	{
+		print_error(-1, "taskmaster: invalid config file");
+		return (0);
+	}
+	if (S_ISDIR(config->st_mode))
+	{
+		print_error(-1, "taskmaster: config file set is a directory...");
+		return (0);
+	}
+	else if (S_ISLNK(config->st_mode))
+	{
+		print_error(-1, "taskmaster: config file set is a symoblic link...");
+		return (0);
+	}
+	if (config->st_mode & S_IRUSR)
 		return (1);
 	else
 	{
-		cerr << "taskmaster: invalid config file" << endl;
+		print_error(-1, "taskmaster: permission denied on the config file");
 		return (0);
 	}
-	flux.close();
 }
 
 string delete_space(string &str)

@@ -15,6 +15,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <sys/stat.h> 
 # define VAR_SYNTHAX '%'
 # define NEW_PROGRAM_SYNTHAX '#'
 # define LOG_FILE 0
@@ -48,6 +49,7 @@ class TaskMasterValue
         return Singleton;
     }
     string LogFilePath;
+    bool LogFilePathExist;
 };
 
 class config_infos

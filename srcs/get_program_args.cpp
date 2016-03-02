@@ -38,11 +38,21 @@ static program		check_variable_and_set(string line, program tmp, int position)
 		{
 			case EXECUTABLE_PATH:
 				i++;
-				/*while (i != (args.size() - 1))
+				if (args.size() == 2 || args.size() == 3)
 				{
-					cout << args[i] << endl;
-					i++;
-				}*/
+					if (args[1].length())
+					{
+						struct stat *executable_path;
+						if (!(executable_path = (struct stat*)malloc(sizeof(struct stat))))
+							return (tmp);
+						if (lstat(args[1].c_str(), executable_path) < 0)
+							print_error(position, "taskmaster: executable path invalid");
+					}
+					else
+						print_error(position, "taskmaster: executable path argument missing");
+				}
+				else
+					print_error(position, "taskmaster: executable path can take only one argument");
 			break;
 
 			case EXECUTABLE_ARGUMENT:
