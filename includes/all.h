@@ -30,6 +30,11 @@
 # define STDOUT_TO 17
 # define STDERROR_CLOSE 18
 # define STDOUT_CLOSE 19
+# define WHITE_COLOR "\e[1;37m"
+# define ENTRY 10
+# define BACKSPACE 127
+# define ARROW_RIGHT 185
+# define ARROW_LEFT 186
 using namespace std;
 class program
 {
@@ -60,6 +65,19 @@ class TaskMasterValue
     bool LogFilePathExist;
 };
 
+class UserEntry
+{
+	public:
+	static UserEntry &Current()
+	{
+		static UserEntry Singleton;
+		return Singleton;
+	}
+	bool end_cmd;
+	string cmd;
+	int cursor;
+};
+
 class config_infos
 {
 	public:
@@ -78,6 +96,11 @@ program		get_new_program(vector<string> data, int i);
 vector<string> get_args(string line, vector<string> args, char delimiter);
 program		get_program_args(int start, vector<string> data, int end, string name);
 string 		get_correct_path(string path);
+bool		check_all_program(vector<program> program_list);
+void		read_user_entry();
+void		print(string str);
+int			ft_isprint(int c);
+void		print_nbr(int nbr);
 
 /*
 				vector<program> program_list;
@@ -85,5 +108,16 @@ string 		get_correct_path(string path);
 				new_prog.program_name = "test";
 				program_list.push_back(new_prog);
 				cout << program_list[0].program_name;
+*/
+
+/*
+CHMOD =
+1 -> x
+2 -> w
+3 -> wx
+4 -> r
+5 -> rx
+6 -> rw
+7 -> rwx
 */
 #endif

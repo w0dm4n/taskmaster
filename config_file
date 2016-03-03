@@ -13,17 +13,6 @@
 	%stdout_to_file;~/blabla
 	//close_stdout;true
 	//close_stderror;true
-	%set_umask;777
-)
-#new_program{bonjour}
-(
-	%auto_start;true;
-)
-#new_program{bonsoir}
-(
-	%auto_start;true;
-)
-#new_program{cava}
-(
+	%set_umask;042
 )
 [end_taskmaster]

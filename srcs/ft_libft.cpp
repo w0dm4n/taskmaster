@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "all.h"
 
 int				ft_strlen(const char *str)
 {
@@ -139,4 +140,44 @@ char			**ft_strsplit(char const *s, char c)
 	}
 	tmp[occurence] = NULL;
 	return (tmp);
+}
+
+void			print(string str)
+{
+	const char *string = str.c_str();
+	int	 i = 0;
+
+	while (string[i])
+	{
+		write(1, &string[i], 1);
+		i++;
+	}
+}
+
+int				ft_isprint(int c)
+{
+ 	if (c >= 32 && c <= 126)
+ 		return (1);
+ 	return (0);
+ }
+
+void			ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void			print_nbr(int nbr)
+{
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nbr = -nbr;
+	}
+	if (nbr >= 10)
+	{
+		print_nbr(nbr / 10);
+		print_nbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + 48);
 }
