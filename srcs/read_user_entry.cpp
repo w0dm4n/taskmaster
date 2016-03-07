@@ -48,6 +48,33 @@ void	refresh_stdout()
 	tputs(tgetstr((char*)"nd", NULL), 0, cursor_do);
 }
 
+void	delete_x_characters(int to_del)
+{
+	tputs(tgoto((char*)tgetstr((char*)"DC", NULL), 0, to_del), 1, cursor_do);
+}
+
+void	delete_current_and_print_history(string to_set)
+{
+	int i = 0;
+
+	if (!UserEntry::Current().cmd.length())
+	{
+		UserEntry::Current().cursor = 0;
+		while (i != to_set.length())
+		{
+			write(1, &to_set[i], 1);
+			i++;
+			UserEntry::Current().cursor++;
+		}
+		UserEntry::Current().cmd.clear();
+		UserEntry::Current().cmd = to_set;
+	}
+	else
+	{
+
+	}
+}
+
 void	read_entry(string tmp_line)
 {
 	struct termios	*term;
@@ -66,21 +93,56 @@ void	read_entry(string tmp_line)
 	ascii_value = get_ascii_value(tmp_line);
 	if (ascii_value == ENTRY)
 		UserEntry::Current().end_cmd = true;
-	if (ascii_value == ARROW_LEFT && UserEntry::Current().cursor)
+	else if (ascii_value == ARROW_LEFT && UserEntry::Current().cursor)
 	{
 		tputs(tgetstr((char*)"le", NULL), 0, cursor_do);
 		UserEntry::Current().cursor--;
 	}
-	if (ascii_value == ARROW_RIGHT && UserEntry::Current().cmd[(UserEntry::Current().cursor - 1)])
+	else if (ascii_value == ARROW_RIGHT && (UserEntry::Current().cmd[(UserEntry::Current().cursor + 1)]
+		|| UserEntry::Current().cursor == (UserEntry::Current().cmd.length() - 1)))
 	{
 		tputs(tgetstr((char*)"nd", NULL), 0, cursor_do);
 		UserEntry::Current().cursor++;
 	}
-	if (ascii_value == BACKSPACE)
+	else if (ascii_value == BACKSPACE && (UserEntry::Current().cmd[(UserEntry::Current().cursor - 1)])
+		&& UserEntry::Current().cursor >= 1)
 	{
-		
+		UserEntry::Current().cmd.erase((UserEntry::Current().cursor - 1), 1);
+		int tmp = UserEntry::Current().cursor;
+		tputs(tgetstr((char*)"sc", NULL), 0, cursor_do);
+		while (UserEntry::Current().cursor >= 1)
+		{
+			tputs(tgetstr((char*)"le", NULL), 0, cursor_do);
+			UserEntry::Current().cursor--;
+		}
+		if (!UserEntry::Current().cmd.length())
+			delete_x_characters(1);
+		else
+			delete_x_characters(UserEntry::Current().cmd.length());
+		print(UserEntry::Current().cmd);
+		UserEntry::Current().cursor = tmp;
+		tputs(tgetstr((char*)"rc", NULL), 0, cursor_do);
+		tputs(tgetstr((char*)"le", NULL), 0, cursor_do);
+		UserEntry::Current().cursor--;
+		if (!UserEntry::Current().cmd.length())
+			UserEntry::Current().cursor = 0;
 	}
-	if (ft_isprint(ascii_value))
+	else if (ascii_value == CLEAR_SCREEN)
+	{
+		print(TO_PRINT_FOR_CLEAR);
+		tputs(tgoto((char*)tgetstr((char*)"cm", NULL), 0, 0), 1, cursor_do);
+		print("taskmaster> ");
+		print(UserEntry::Current().cmd);
+	}
+	else if (ascii_value == ARROW_UP)
+	{
+		UserEntry::Current().history_pos--;
+		if (UserEntry::Current().cmd_history[UserEntry::Current().history_pos].length())
+			delete_current_and_print_history(UserEntry::Current().cmd_history[UserEntry::Current().history_pos]);
+		else
+			UserEntry::Current().history_pos++;
+	}
+	else if (ft_isprint(ascii_value))
 	{
 		if (UserEntry::Current().cmd[(UserEntry::Current().cursor + 1)])
 		{
@@ -95,6 +157,13 @@ void	read_entry(string tmp_line)
 			UserEntry::Current().cursor++;
 		}
 	}
+}
+
+void	handle_history()
+{
+	UserEntry::Current().cmd_history.push_back(UserEntry::Current().cmd);
+	UserEntry::Current().history_pos++;
+
 }
 
 void	reset_value()
@@ -112,6 +181,7 @@ void	read_user_entry()
 	if (UserEntry::Current().end_cmd)
 	{
 		print("\ntaskmaster> ");		
+		handle_history();
 		reset_value();
 	}
 	read_user_entry();

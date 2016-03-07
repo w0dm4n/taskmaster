@@ -33,8 +33,12 @@
 # define WHITE_COLOR "\e[1;37m"
 # define ENTRY 10
 # define BACKSPACE 127
+# define ARROW_UP 183
+# define ARROW_DOWN 184
 # define ARROW_RIGHT 185
 # define ARROW_LEFT 186
+# define CLEAR_SCREEN 12
+# define TO_PRINT_FOR_CLEAR "\033[2J"
 using namespace std;
 class program
 {
@@ -76,6 +80,8 @@ class UserEntry
 	bool end_cmd;
 	string cmd;
 	int cursor;
+	vector<string> cmd_history;
+	int history_pos;
 };
 
 class config_infos
