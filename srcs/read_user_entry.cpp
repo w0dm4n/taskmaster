@@ -151,9 +151,10 @@ void	read_entry(string tmp_line)
 	}
 	else if (ascii_value == ARROW_UP)
 	{
-		if (!UserEntry::Current().cmd_history.size())
+		if (!UserEntry::Current().cmd_history.size() || !UserEntry::Current().history_pos)
 			return ;
-		if (UserEntry::Current().cmd_history[(UserEntry::Current().history_pos - 1)].length())
+		if (UserEntry::Current().cmd_history[(UserEntry::Current().history_pos - 1)].length()
+			&& UserEntry::Current().history_pos <= UserEntry::Current().cmd_history.size())
 		{
 			UserEntry::Current().history_pos--;
 			delete_current_and_print_history(UserEntry::Current().cmd_history[UserEntry::Current().history_pos], tmp_line);
@@ -218,7 +219,7 @@ string trim(const string &s)
     return (string(it, rit.base()));
 }
 
-void	read_user_entry()
+void	read_user_entry(vector<program> program_list)
 {
 	string tmp_line;
 
@@ -227,13 +228,10 @@ void	read_user_entry()
 	{
 		UserEntry::Current().cmd = trim(UserEntry::Current().cmd);
 		if (UserEntry::Current().cmd.length())
-		{
-			print("\n");
-			print(UserEntry::Current().cmd);
-		}
+			handle_cmd(UserEntry::Current().cmd, program_list);
 		print("\ntaskmaster> ");		
 		handle_history();
 		reset_value();
 	}
-	read_user_entry();
+	read_user_entry(program_list);
 }

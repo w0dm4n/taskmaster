@@ -103,10 +103,11 @@ vector<string> get_args(string line, vector<string> args, char delimiter);
 program		get_program_args(int start, vector<string> data, int end, string name);
 string 		get_correct_path(string path);
 bool		check_all_program(vector<program> program_list);
-void		read_user_entry();
+void		read_user_entry(vector<program> program_list);
 void		print(string str);
 int			ft_isprint(int c);
 void		print_nbr(int nbr);
+void		handle_cmd(string cmd, vector<program> progam_list);
 
 /*
 				vector<program> program_list;

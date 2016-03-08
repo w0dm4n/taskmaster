@@ -23,7 +23,7 @@ void	handle_config(string config_name)
 	if (check_all_program(program_list))
 	{
 		print("taskmaster> ");
-		read_user_entry();
+		read_user_entry(program_list);
 	}
 	/*int i = 0;
 	int env = 0;
