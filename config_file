@@ -15,4 +15,11 @@
 	//close_stderror;true
 	%set_umask;042
 )
+#new_program{bonjour}
+(
+	%executable_path;~/Desktop/work/ft_ls/ft_ls;
+	%set_env;tamer;lekaliptus;
+	%set_env;wtf;???
+	%auto_start;true;
+)
 [end_taskmaster]

@@ -51,6 +51,7 @@ static program		check_variable_and_set(string line, program tmp, int position)
 				{
 					if (args[1].length())
 					{
+						args[1] = get_correct_path(args[1]);
 						struct stat *executable_path;
 						if (!(executable_path = (struct stat*)malloc(sizeof(struct stat))))
 							return (tmp);

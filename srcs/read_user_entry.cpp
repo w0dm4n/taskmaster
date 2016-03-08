@@ -203,6 +203,19 @@ void	reset_value()
 	UserEntry::Current().cmd.clear();
 }
 
+string trim(const string &s)
+{
+    string::const_iterator it = s.begin();
+    while (it != s.end() && isspace(*it))
+        it++;
+
+    string::const_reverse_iterator rit = s.rbegin();
+    while (rit.base() != it && isspace(*rit))
+        rit++;
+
+    return (string(it, rit.base()));
+}
+
 void	read_user_entry()
 {
 	string tmp_line;
@@ -210,8 +223,12 @@ void	read_user_entry()
 	read_entry(tmp_line);
 	if (UserEntry::Current().end_cmd)
 	{
-		print("\n");
-		print(UserEntry::Current().cmd);
+		UserEntry::Current().cmd = trim(UserEntry::Current().cmd);
+		if (UserEntry::Current().cmd.length())
+		{
+			print("\n");
+			print(UserEntry::Current().cmd);
+		}
 		print("\ntaskmaster> ");		
 		handle_history();
 		reset_value();
