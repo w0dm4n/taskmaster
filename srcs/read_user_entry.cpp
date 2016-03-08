@@ -201,8 +201,14 @@ void	handle_history()
 
 void	reset_value()
 {
+	int i = 0;
 	UserEntry::Current().end_cmd = false;
 	UserEntry::Current().cursor = 0;
+	while (UserEntry::Current().cmd[i])
+	{
+		UserEntry::Current().cmd[i] = '\0';
+		i++;
+	}
 	UserEntry::Current().cmd.clear();
 }
 

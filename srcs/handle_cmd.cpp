@@ -12,11 +12,54 @@
 
 #include "all.h"
 
-void		handle_cmd(string cmd, vector<program> progam_list)
+string				get_cmd(string cmd)
 {
-	size_t test = cmd.find(" ");
-	for (unsigned i=0; i<cmd.length(); ++i)
- 	 {
-   	 	print_nbr(cmd.at(i));
- 	 }
+	int		i;
+	string	tmp;
+
+	i = 0;
+	while (cmd[i] && cmd[i] != ' ')
+	{
+		tmp += cmd[i];
+		i++;
+	}
+	return (tmp);
+}
+
+vector<string>		get_args(string cmd)
+{
+	int				i;
+	vector<string>	tmp_args;
+	string			tmp;
+	i = 0;
+	while (cmd[i] && cmd[i] != ' ')
+		i++;
+	i++;
+	while (cmd[i])
+	{
+		if (cmd[i] != ' ')
+		{
+			while (cmd[i] && cmd[i] != ' ')
+			{
+				tmp += cmd[i];
+				i++;
+			}
+			if (ft_is_all_print((char*)tmp.c_str()))
+				tmp_args.push_back(tmp);
+			tmp.clear();
+		}
+		i++;
+	}
+	return (tmp_args);
+}
+
+void				handle_cmd(string cmd, vector<program> progam_list)
+{
+	string			cmd_to;
+	vector<string>	cmd_args;
+	int				i = 0;
+
+	cmd_to = get_cmd(cmd);
+	cmd_args = get_args(cmd);
+	check_cmd(cmd_to, cmd_args);
 }

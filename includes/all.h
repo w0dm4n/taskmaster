@@ -105,9 +105,13 @@ string 		get_correct_path(string path);
 bool		check_all_program(vector<program> program_list);
 void		read_user_entry(vector<program> program_list);
 void		print(string str);
+void		print_fd(string str, int fd);
 int			ft_isprint(int c);
 void		print_nbr(int nbr);
 void		handle_cmd(string cmd, vector<program> progam_list);
+void		check_cmd(string cmd, vector<string> cmd_args);
+void		get_help_cmd(vector<string> args);
+int			ft_is_all_print(char *str);
 
 /*
 				vector<program> program_list;

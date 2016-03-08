@@ -6,7 +6,7 @@
 /*   By: frmarinh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 06:16:15 by frmarinh          #+#    #+#             */
-/*   Updated: 2016/02/22 14:03:45 by frmarinh         ###   ########.fr       */
+/*   Updated: 2016/03/08 22:49:36 by frmarinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,18 @@ void			print(string str)
 	}
 }
 
+void		print_fd(string str, int fd)
+{
+	const char *string = str.c_str();
+	int i = 0;
+
+	while (string[i])
+	{
+		write(fd, &string[i], 1);
+		i++;
+	}
+}
+
 int				ft_isprint(int c)
 {
  	if (c >= 32 && c <= 126)
@@ -180,4 +192,26 @@ void			print_nbr(int nbr)
 	}
 	else
 		ft_putchar(nbr + 48);
+}
+
+int		ft_isalnum(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
+}
+
+int		ft_is_all_print(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!ft_isalnum(str[i]) && str[i] != '.' && str[i] != '_')
+			return (0);
+		i++;
+	}
+	return (1);
 }
