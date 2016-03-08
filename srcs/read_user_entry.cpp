@@ -161,6 +161,8 @@ void	read_entry(string tmp_line)
 	}
 	else if (ascii_value == ARROW_DOWN)
 	{
+		if (!UserEntry::Current().cmd_history.size())
+			return ;
 		if ((UserEntry::Current().history_pos + 1) > (UserEntry::Current().cmd_history.size() - 1))
 			return ;
 		if (UserEntry::Current().cmd_history[(UserEntry::Current().history_pos + 1)].length() 
