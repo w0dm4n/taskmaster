@@ -53,11 +53,11 @@ void	delete_x_characters(int to_del)
 	tputs(tgoto((char*)tgetstr((char*)"DC", NULL), 0, to_del), 1, cursor_do);
 }
 
-void	delete_current_and_print_history(string to_set)
+void	delete_current_and_print_history(string to_set, string tmp)
 {
 	int i = 0;
 
-	if (!UserEntry::Current().cmd.length())
+	if (!UserEntry::Current().cmd.length() && !tmp.length())
 	{
 		UserEntry::Current().cursor = 0;
 		while (i != to_set.length())
@@ -71,7 +71,22 @@ void	delete_current_and_print_history(string to_set)
 	}
 	else
 	{
-
+		while (i != UserEntry::Current().cmd.length())
+		{
+			tputs(tgetstr((char*)"le", NULL), 0, cursor_do);
+			i++;
+		}
+		tputs(tgetstr((char*)"cd", NULL), 0, cursor_do);
+		UserEntry::Current().cursor = 0;
+		i = 0;
+		while (i != to_set.length())
+		{
+			write(1, &to_set[i], 1);
+			i++;
+			UserEntry::Current().cursor++;
+		}
+		UserEntry::Current().cmd.clear();
+		UserEntry::Current().cmd = to_set;
 	}
 }
 
@@ -136,11 +151,24 @@ void	read_entry(string tmp_line)
 	}
 	else if (ascii_value == ARROW_UP)
 	{
-		UserEntry::Current().history_pos--;
-		if (UserEntry::Current().cmd_history[UserEntry::Current().history_pos].length())
-			delete_current_and_print_history(UserEntry::Current().cmd_history[UserEntry::Current().history_pos]);
-		else
+		if (!UserEntry::Current().cmd_history.size())
+			return ;
+		if (UserEntry::Current().cmd_history[(UserEntry::Current().history_pos - 1)].length())
+		{
+			UserEntry::Current().history_pos--;
+			delete_current_and_print_history(UserEntry::Current().cmd_history[UserEntry::Current().history_pos], tmp_line);
+		}
+	}
+	else if (ascii_value == ARROW_DOWN)
+	{
+		if ((UserEntry::Current().history_pos + 1) > (UserEntry::Current().cmd_history.size() - 1))
+			return ;
+		if (UserEntry::Current().cmd_history[(UserEntry::Current().history_pos + 1)].length() 
+			&& UserEntry::Current().history_pos <= UserEntry::Current().cmd_history.size())
+		{
 			UserEntry::Current().history_pos++;
+			delete_current_and_print_history(UserEntry::Current().cmd_history[UserEntry::Current().history_pos], tmp_line);
+		}
 	}
 	else if (ft_isprint(ascii_value))
 	{
@@ -161,9 +189,11 @@ void	read_entry(string tmp_line)
 
 void	handle_history()
 {
-	UserEntry::Current().cmd_history.push_back(UserEntry::Current().cmd);
-	UserEntry::Current().history_pos++;
-
+	if (UserEntry::Current().cmd.length())
+	{
+		UserEntry::Current().cmd_history.push_back(UserEntry::Current().cmd);
+		UserEntry::Current().history_pos = UserEntry::Current().cmd_history.size();
+	}
 }
 
 void	reset_value()
@@ -180,6 +210,8 @@ void	read_user_entry()
 	read_entry(tmp_line);
 	if (UserEntry::Current().end_cmd)
 	{
+		print("\n");
+		print(UserEntry::Current().cmd);
 		print("\ntaskmaster> ");		
 		handle_history();
 		reset_value();
