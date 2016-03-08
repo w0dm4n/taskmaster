@@ -14,5 +14,9 @@
 
 void		handle_cmd(string cmd, vector<program> progam_list)
 {
-	print("\n" + cmd);
+	size_t test = cmd.find(" ");
+	for (unsigned i=0; i<cmd.length(); ++i)
+ 	 {
+   	 	print_nbr(cmd.at(i));
+ 	 }
 }
