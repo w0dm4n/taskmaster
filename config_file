@@ -13,7 +13,7 @@
 	%stdout_to_file;~/blabla
 	//close_stdout;true
 	//close_stderror;true
-	%set_umask;aaa
+	%set_umask;123
 )
 #new_program{bonjour}
 (

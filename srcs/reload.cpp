@@ -32,6 +32,7 @@ vector<program> 	reload(vector<string> args, vector<program> program_list)
 			if (TaskMasterValue::Current().Errors == 0)
 			{
 				print("*** Config file has been reloaded");
+				add_in_logs(TaskMasterValue::Current().LogFilePath, "The config file was reloaded.");
 				return (new_list);
 			}
 			else

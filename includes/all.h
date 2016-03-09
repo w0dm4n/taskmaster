@@ -119,6 +119,7 @@ void		get_process_status(vector<string> args, vector<program> program_list);
 vector<program>		reload(vector<string> args, vector<program> program_list);
 void				start_program(vector<string> args, vector<program> program_list);
 void				handle_program(program to);
+void				add_in_logs(string file_path, string content);
 
 /*
 				vector<program> program_list;
