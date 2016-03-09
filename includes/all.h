@@ -67,6 +67,7 @@ class TaskMasterValue
     }
     string LogFilePath;
     bool LogFilePathExist;
+    string ConfigFileName;
 };
 
 class UserEntry
@@ -108,10 +109,13 @@ void		print(string str);
 void		print_fd(string str, int fd);
 int			ft_isprint(int c);
 void		print_nbr(int nbr);
-void		handle_cmd(string cmd, vector<program> progam_list);
-void		check_cmd(string cmd, vector<string> cmd_args);
+vector<program>		handle_cmd(string cmd, vector<program> program_list);
+vector<program>		check_cmd(string cmd, vector<string> cmd_args, vector<program> program_list);
 void		get_help_cmd(vector<string> args);
 int			ft_is_all_print(char *str);
+void		get_process_status(vector<string> args, vector<program> program_list);
+vector<program>		reload(vector<string> args, vector<program> program_list);
+void				start_program(vector<string> args, vector<program> program_list);
 
 /*
 				vector<program> program_list;

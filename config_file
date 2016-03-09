@@ -22,4 +22,12 @@
 	%set_env;wtf;???
 	%auto_start;true;
 )
+#new_program{salut}
+(
+	%executable_path;~/Desktop/work/ft_ls/ft_ls;
+)
+#new_program{lol}
+(
+	%executable_path;~/Desktop/work/ft_ls/ft_ls;
+)
 [end_taskmaster]

@@ -21,7 +21,7 @@ void	get_help_cmd(vector<string> args)
 		print("\n");
 		print("default commands (type help <topic>):\n");
 		print("=====================================\n");
-		print("status");
+		print("status	start	reload");
 		print("\n");
 	}
 	else
@@ -38,6 +38,15 @@ void	get_help_cmd(vector<string> args)
 		{
 			print ("status			Get all process status infos\n"); 
 			print ("status <name>           Get status on multiple or single process");
+		}
+		else if (topic == "start")
+		{
+			print ("start <name>		Start on multiple or single a process by name\n");
+			print ("start all               Start all process");
+		}
+		else if (topic == "reload")
+		{
+			print ("reload config		Reload the config file");
 		}
 		else
 			print_fd("*** No help on " + topic, 2);

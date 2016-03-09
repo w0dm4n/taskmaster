@@ -53,7 +53,7 @@ vector<string>		get_args(string cmd)
 	return (tmp_args);
 }
 
-void				handle_cmd(string cmd, vector<program> progam_list)
+vector<program>		handle_cmd(string cmd, vector<program> progam_list)
 {
 	string			cmd_to;
 	vector<string>	cmd_args;
@@ -61,5 +61,5 @@ void				handle_cmd(string cmd, vector<program> progam_list)
 
 	cmd_to = get_cmd(cmd);
 	cmd_args = get_args(cmd);
-	check_cmd(cmd_to, cmd_args);
+	return (check_cmd(cmd_to, cmd_args, progam_list));
 }

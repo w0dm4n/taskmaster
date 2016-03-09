@@ -22,6 +22,8 @@ void	handle_config(string config_name)
 		program_list = config.read_config(program_list);
 	if (check_all_program(program_list))
 	{
+		//launch process in auto start
+		TaskMasterValue::Current().ConfigFileName = config_name;
 		print("taskmaster> ");
 		read_user_entry(program_list);
 	}

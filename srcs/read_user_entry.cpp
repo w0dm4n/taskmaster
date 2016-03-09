@@ -234,7 +234,7 @@ void	read_user_entry(vector<program> program_list)
 	{
 		UserEntry::Current().cmd = trim(UserEntry::Current().cmd);
 		if (UserEntry::Current().cmd.length())
-			handle_cmd(UserEntry::Current().cmd, program_list);
+			program_list = handle_cmd(UserEntry::Current().cmd, program_list);
 		print("\ntaskmaster> ");		
 		handle_history();
 		reset_value();

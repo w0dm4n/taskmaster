@@ -30,6 +30,10 @@ SRCS_FILE = $(SRCS_PATH)/main.cpp \
 			$(SRCS_PATH)/handle_cmd.cpp \
 			$(SRCS_PATH)/check_cmd.cpp \
 			$(SRCS_PATH)/get_help_cmd.cpp \
+			$(SRCS_PATH)/get_process_status.cpp \
+			$(SRCS_PATH)/reload.cpp \
+			$(SRCS_PATH)/start_program.cpp \
+			$(SRCS_PATH)/handle_program.cpp \
 			$(SRCS_PATH)/read_user_entry.cpp
 
 ALL_O_FILE = $(notdir $(SRCS_FILE))
