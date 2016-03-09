@@ -35,6 +35,8 @@ SRCS_FILE = $(SRCS_PATH)/main.cpp \
 			$(SRCS_PATH)/start_program.cpp \
 			$(SRCS_PATH)/handle_program.cpp \
 			$(SRCS_PATH)/logs.cpp \
+			$(SRCS_PATH)/utils.cpp \
+			$(SRCS_PATH)/env.cpp \
 			$(SRCS_PATH)/read_user_entry.cpp
 
 ALL_O_FILE = $(notdir $(SRCS_FILE))

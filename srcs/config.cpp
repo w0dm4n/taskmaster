@@ -20,6 +20,7 @@ int	config_infos::check_if_config_exist(void)
 		return (-1);
 	if (lstat(this->config_file_name.c_str(), config) < 0)
 	{
+		print(this->config_file_name.c_str());
 		print_error(-1, "taskmaster: invalid config file");
 		return (0);
 	}

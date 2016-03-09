@@ -39,7 +39,7 @@ vector<program> 	reload(vector<string> args, vector<program> program_list)
 			{
 				print("\n*** Can't reload the config file due to ");
 				print_nbr(TaskMasterValue::Current().Errors);
-				print (" errors");
+				print (" error(s)");
 				TaskMasterValue::Current().Errors = 0;
 				return (program_list);
 			}

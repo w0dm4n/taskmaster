@@ -60,7 +60,10 @@ int		main(int argc, char **argv, char **env)
 			i++;
 		}
 		if (strchr(flags.c_str(), 'c') && other)
+		{
+			TaskMasterValue::Current().DefaultEnvironment = get_environment_vector(env);
 			handle_config(config_file);
+		}
 		else
 			cerr << "taskmaster: missing configuration file" << endl;
 	}

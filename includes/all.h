@@ -30,6 +30,7 @@
 # define STDOUT_TO 17
 # define STDERROR_CLOSE 18
 # define STDOUT_CLOSE 19
+# define PRINT_ON_TASKMASTER 20
 # define WHITE_COLOR "\e[1;37m"
 # define ENTRY 10
 # define BACKSPACE 127
@@ -53,8 +54,12 @@ class program
 	string			set_umask;
 	string			stderror_to_file;
 	string			stdout_to_file;
+	bool			print_on_taskmaster;
 	bool			close_stdout;
 	bool			close_stderror;
+	vector<string>	Environment_Data;
+	void		   GetEnvToSet(vector<string> env_to_set);
+	void		   FindAndSet(char *variable, char *value);
 };
 
 class TaskMasterValue
@@ -70,6 +75,7 @@ class TaskMasterValue
     string ConfigFileName;
     bool ExitProgramOnError;
     int Errors;
+    vector<string> DefaultEnvironment;
 };
 
 class UserEntry
@@ -120,6 +126,8 @@ vector<program>		reload(vector<string> args, vector<program> program_list);
 void				start_program(vector<string> args, vector<program> program_list);
 void				handle_program(program to);
 void				add_in_logs(string file_path, string content);
+int					check_folder(string folder, string program_name);
+vector<string> 		get_environment_vector(char **env);
 
 /*
 				vector<program> program_list;

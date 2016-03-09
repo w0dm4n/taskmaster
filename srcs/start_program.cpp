@@ -24,7 +24,10 @@ void		start_program(vector<string> args, vector<program> program_list)
 		{
 			int i = 0;
 			if (!program_list.size())
+			{
 				print_error(-1, "There is no process to launch");
+				add_in_logs(TaskMasterValue::Current().LogFilePath, "Trying to launch all process but there is no process found");
+			}
 			while (i < program_list.size())
 			{
 				handle_program(program_list[i]);
@@ -53,6 +56,7 @@ void		start_program(vector<string> args, vector<program> program_list)
 						print_fd("*** Process " + args[i] + " not found\n", 2);
 					else
 						print_fd("*** Process " + args[i] + " not found", 2);
+					add_in_logs(TaskMasterValue::Current().LogFilePath, "Trying to launch a process not found (" + args[i] + ")");
 				}
 				p_i = 0;
 				found = false;

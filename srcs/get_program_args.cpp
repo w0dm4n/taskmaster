@@ -34,6 +34,8 @@ static int			get_variable_state(string var)
 		return (STDERROR_CLOSE);
 	else if (var == "close_stdout")
 		return (STDOUT_CLOSE);
+	else if (var == "print_on_taskmaster")
+		return (PRINT_ON_TASKMASTER);
 	return (UNKNOWN_VARIABLE);
 }
 
@@ -189,6 +191,18 @@ static program		check_variable_and_set(string line, program tmp, int position)
 				}
 				else
 					print_error(position, "taskmaster: close_stderror bad syntax");
+			break;
+
+			case PRINT_ON_TASKMASTER:
+				if (args.size() == 3)
+				{
+					if (args[1] == "true")
+						tmp.print_on_taskmaster = true;
+					else
+						tmp.print_on_taskmaster = false;
+				}
+				else
+					print_error(position, "taskmaster: print_stdout bad syntax");
 			break;
 
 			default:

@@ -5,8 +5,7 @@
 	%executable_path;/bin/ls;
 	%executable_argument;-l -R;
 	%set_env;test;blabla;
-	%set_env;tamer;bonjour;
-	%working_dir;~/Desktop/work/alcu;
+	%working_dir;~/Desktop;
 	%auto_start;true;
 	//%exit_signal;SIGINT;
 	%stderror_to_file;~/Desktop/work/log/$program_name.log;
@@ -14,6 +13,7 @@
 	//close_stdout;true
 	//close_stderror;true
 	%set_umask;123
+	%print_on_taskmaster;false
 )
 #new_program{bonjour}
 (
@@ -29,5 +29,6 @@
 #new_program{lol}
 (
 	%executable_path;~/Desktop/work/ft_ls/ft_ls;
+	%working_dir;~/Desktop/work/ft_ls/ft_ls
 )
 [end_taskmaster]
