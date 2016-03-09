@@ -10,4 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "all.h"
 
+void		handle_program(program to)
+{
+	print("START : " + to.program_name + "\n");
+}

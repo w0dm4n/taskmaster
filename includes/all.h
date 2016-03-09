@@ -68,6 +68,8 @@ class TaskMasterValue
     string LogFilePath;
     bool LogFilePathExist;
     string ConfigFileName;
+    bool ExitProgramOnError;
+    int Errors;
 };
 
 class UserEntry
@@ -116,6 +118,7 @@ int			ft_is_all_print(char *str);
 void		get_process_status(vector<string> args, vector<program> program_list);
 vector<program>		reload(vector<string> args, vector<program> program_list);
 void				start_program(vector<string> args, vector<program> program_list);
+void				handle_program(program to);
 
 /*
 				vector<program> program_list;

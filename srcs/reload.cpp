@@ -24,12 +24,24 @@ vector<program> 	reload(vector<string> args, vector<program> program_list)
 		{
 			vector<program> new_list;
 			config_infos config;
+			TaskMasterValue::Current().ExitProgramOnError = false;
 			config.config_file_name = TaskMasterValue::Current().ConfigFileName;
 			if (config.check_if_config_exist())
 				new_list = config.read_config(new_list);
 			check_all_program(new_list);
-			print("*** Config file has been reloaded");
-			return (new_list);
+			if (TaskMasterValue::Current().Errors == 0)
+			{
+				print("*** Config file has been reloaded");
+				return (new_list);
+			}
+			else
+			{
+				print("\n*** Can't reload the config file due to ");
+				print_nbr(TaskMasterValue::Current().Errors);
+				print (" errors");
+				TaskMasterValue::Current().Errors = 0;
+				return (program_list);
+			}
 		}
 		else
 			print_fd("*** Arguments are invalid (see help <topic>", 2);

@@ -18,6 +18,7 @@ void	handle_config(string config_name)
 	vector<program> program_list;
 
 	config.config_file_name = config_name;
+	TaskMasterValue::Current().ExitProgramOnError = true;
 	if (config.check_if_config_exist())
 		program_list = config.read_config(program_list);
 	if (check_all_program(program_list))

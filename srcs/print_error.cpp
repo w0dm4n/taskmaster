@@ -17,5 +17,7 @@ void	print_error(int position, string message)
 	if (position != -1)
 		cerr << "taskmaster configuration: error at the line " << position << ": "<< endl;
 	cerr << message << endl;
-	exit(0);
+	TaskMasterValue::Current().Errors++;
+	if (TaskMasterValue::Current().ExitProgramOnError)
+		exit(0);
 }
