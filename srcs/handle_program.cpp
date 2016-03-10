@@ -58,7 +58,7 @@ char		**get_program_env(vector<string> data)
 	char	**env_new;
 	int		i = 0;
 
-	if (!(env_new = (char**)malloc(sizeof(char*) * 100)))
+	if (!(env_new = (char**)malloc(sizeof(char*) * 100000)))
 		return (NULL);
 	while (env_new[i])
 	{
@@ -89,6 +89,9 @@ void		handle_program(program to)
 		int child_status;
 		if (child == 0)
 		{
+			// try to pipe && save child pid for closure feature
+			if (to.set_umask.length())
+				umask((unsigned short)atoi(to.set_umask.c_str()));
 			char	**env = get_program_env(to.Environment_Data);
 			int i = 0;
 			if (!to.print_on_taskmaster)

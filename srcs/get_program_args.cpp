@@ -133,7 +133,7 @@ static program		check_variable_and_set(string line, program tmp, int position)
 				{
 					if (args[1].length())
 					{
-						if (args[1].length() == 3 && atoi(args[1].c_str()) <= 777)
+						if (atoi(args[1].c_str()) <= 7777)
 							tmp.set_umask = args[1];
 						else
 							print_error(position, "taskmaster: set_umask invalid permissions");

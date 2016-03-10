@@ -1,5 +1,5 @@
 [taskmaster]
-%taskmaster_log_file;~/Desktop/work/taskmaster/logs/taskmaster.log;
+%taskmaster_log_file;~/Desktop/work/taskmaster/logs/BONJOUR;
 #new_program{test}
 (
 	%executable_path;/bin/ls;
@@ -12,7 +12,7 @@
 	%stdout_to_file;~/blabla
 	//close_stdout;true
 	//close_stderror;true
-	%set_umask;123
+	%set_umask;0
 	//%print_on_taskmaster;false
 )
 #new_program{bonjour}
@@ -38,5 +38,13 @@
 	%print_on_taskmaster;false
 	%set_env;BJR;SLT
 	%set_env;LOGNAME;LUCIFER
+)
+#new_program{create_file}
+(
+	%executable_path;/usr/bin/touch
+	%executable_argument;slt
+	%working_dir;~/Desktop/work/taskmaster
+	%set_umask;6354
+	%print_on_taskmaster;false;
 )
 [end_taskmaster]

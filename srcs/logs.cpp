@@ -21,6 +21,17 @@ void		add_in_logs(string file_path, string content)
 	int res = 0;
 
 	fd = open(file_path.c_str(), O_RDWR);
+	if (fd == -1)
+	{
+		close (fd);
+		if ((fd = open(file_path.c_str(), O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO)) == -1)
+			print_error(-1, "Can't open the log file !");
+		else
+		{
+			close(fd);
+			fd = open(file_path.c_str(), O_RDWR);
+		}
+	}
 	content += "\n"; // ADD [DAYS-HOUR] IN FRONT OF THE MSG
 	while ((res = read(fd, buffer, 1024)) > 0)
 	{
