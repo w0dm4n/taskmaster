@@ -3,7 +3,7 @@
 #new_program{test}
 (
 	%executable_path;/bin/ls;
-	%executable_argument;-l -R;
+	%executable_argument;-l -R -a /;
 	%set_env;test;blabla;
 	%working_dir;~/Desktop;
 	%auto_start;true;
@@ -13,7 +13,7 @@
 	//close_stdout;true
 	//close_stderror;true
 	%set_umask;123
-	%print_on_taskmaster;true
+	//%print_on_taskmaster;false
 )
 #new_program{bonjour}
 (

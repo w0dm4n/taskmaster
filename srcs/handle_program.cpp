@@ -91,12 +91,6 @@ void		handle_program(program to)
 		{
 			char	**env = get_program_env(to.Environment_Data);
 			int i = 0;
-			/*while (env[i])
-			{
-				print(env[i]);
-				print("\n");
-				i++;
-			}*/
 			if (!to.print_on_taskmaster)
 			{
 				close (0);

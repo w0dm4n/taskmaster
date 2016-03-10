@@ -74,7 +74,10 @@ program		get_new_program(vector<string> data, int i)
 			if (data[i + 1] != "(")
 				print_error((i + 3), "missing ( for the function opening");
 			if (function_end == -1)
+			{
+				TaskMasterValue::Current().ExitProgramOnError = true;
 				print_error((i + 2), "missing ) for the function end");
+			}
 			new_program = get_program_args((i + 2), data, function_end, name);
 		}
 		else
