@@ -13,7 +13,7 @@
 	//close_stdout;true
 	//close_stderror;true
 	%set_umask;123
-	%print_on_taskmaster;false
+	%print_on_taskmaster;true
 )
 #new_program{bonjour}
 (
@@ -30,5 +30,13 @@
 (
 	%executable_path;~/Desktop/work/ft_ls/ft_ls;
 	%working_dir;~/Desktop/work/ft_ls/ft_ls
+)
+#new_program{petit_test}
+(
+	%executable_path;~/Desktop/work/test/petit_test
+	%working_dir;~/;
+	%print_on_taskmaster;false
+	%set_env;BJR;SLT
+	%set_env;LOGNAME;LUCIFER
 )
 [end_taskmaster]

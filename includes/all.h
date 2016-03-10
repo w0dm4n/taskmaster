@@ -40,6 +40,8 @@
 # define ARROW_LEFT 186
 # define CLEAR_SCREEN 12
 # define TO_PRINT_FOR_CLEAR "\033[2J"
+# define DEFAULT_ARGS_SIZE 1024
+# define DEFAULT_ENV_SIZE 1024
 using namespace std;
 class program
 {
