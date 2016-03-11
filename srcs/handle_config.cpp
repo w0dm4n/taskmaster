@@ -49,7 +49,6 @@ void	handle_config(string config_name)
 			}
 			print("*** Auto starting program end ***\n\n");
 		}
-
 		TaskMasterValue::Current().ConfigFileName = config_name;
 		print("taskmaster> ");
 		read_user_entry(program_list);
