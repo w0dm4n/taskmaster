@@ -75,7 +75,7 @@ vector<program> stop_program(vector<string> args, vector<program> program_list)
 			}
 			if (!found)
 				print("*** Process " + args[i] + " not found.");
-			found = 0;
+			found = false;
 			p_i = 0;
 			i++;
 		}			

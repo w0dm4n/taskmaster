@@ -1,6 +1,6 @@
 total 10380
 drwx------   4 frmarinh  2015_paris     4096 Mar 10 04:52 .
-drwx------  22 frmarinh  2015_paris     4096 Mar 11 04:41 ..
+drwx------  22 frmarinh  2015_paris     4096 Mar 11 04:57 ..
 -rw-r--r--@  1 frmarinh  2015_paris    10244 Mar 10 04:52 .DS_Store
 -rw-r--r--   1 frmarinh  2015_paris     4096 Mar 10 04:45 ._.DS_Store
 -rw-r--r--   1 frmarinh  2015_paris     4096 Mar 10 04:37 ._3D-Purple-Background.jpeg
@@ -1350,7 +1350,7 @@ drwxrwxrwx   4 frmarinh  2015_paris   4096 Feb 17 21:24 ft_select_push
 drwxrwxrwx   3 frmarinh  2015_paris   4096 Feb  6 10:43 iTerm.app
 drwxrwxrwx   4 frmarinh  2015_paris   4096 Feb 17 22:12 minishell
 drwxrwxrwx   4 frmarinh  2015_paris   4096 Feb 18 04:12 minishell_fixed
-drwxrwxrwx   6 frmarinh  2015_paris   4096 Mar 11 04:33 taskmaster
+drwxrwxrwx   6 frmarinh  2015_paris   4096 Mar 11 04:57 taskmaster
 drwxrwxrwx   2 frmarinh  2015_paris   4096 Mar 10 02:00 test
 drwxrwxrwx   4 frmarinh  2015_paris   4096 Feb 17 21:24 test_minishell
 
@@ -6532,54 +6532,54 @@ drwxr-xr-x  3 frmarinh  2015_paris  4096 Feb 17 22:13 ..
 -rwxr-xr-x  1 frmarinh  2015_paris  4271 Feb 17 21:24 libft.h
 
 ./work/taskmaster:
-total 18569
-drwxrwxrwx   6 frmarinh  2015_paris     4096 Mar 11 04:33 .
+total 18579
+drwxrwxrwx   6 frmarinh  2015_paris     4096 Mar 11 04:57 .
 drwxr-xr-x  19 frmarinh  2015_paris     4096 Mar 11 01:03 ..
 -rw-r--r--@  1 frmarinh  2015_paris    10244 Mar 10 23:39 .DS_Store
 -rw-r--r--   1 frmarinh  2015_paris     4096 Mar 10 04:17 ._.DS_Store
-drwxr-xr-x   8 frmarinh  2015_paris     4096 Mar 11 04:41 .git
+drwxr-xr-x   8 frmarinh  2015_paris     4096 Mar 11 04:57 .git
 -rwxr-xr-x   1 frmarinh  2015_paris     2097 Mar 11 02:12 Makefile
--rw-r--r--   1 frmarinh  2015_paris    92004 Mar 11 04:33 check_all_program.o
--rw-r--r--   1 frmarinh  2015_paris   167940 Mar 11 04:33 check_cmd.o
--rw-r--r--   1 frmarinh  2015_paris   327428 Mar 11 04:33 config.o
--rw-r--r--   1 frmarinh  2015_paris     1295 Mar 11 04:37 config_file
--rw-r--r--   1 frmarinh  2015_paris   125348 Mar 11 04:33 env.o
--rw-r--r--   1 frmarinh  2015_paris    55808 Mar 11 04:33 ft_libft.o
--rw-r--r--   1 frmarinh  2015_paris    91996 Mar 11 04:33 get_help_cmd.o
--rw-r--r--   1 frmarinh  2015_paris   161252 Mar 11 04:33 get_new_program.o
--rw-r--r--   1 frmarinh  2015_paris   180536 Mar 11 04:33 get_process_status.o
--rw-r--r--   1 frmarinh  2015_paris   224960 Mar 11 04:33 get_program_args.o
--rw-r--r--   1 frmarinh  2015_paris   193724 Mar 11 04:33 handle_cmd.o
--rw-r--r--   1 frmarinh  2015_paris   173908 Mar 11 04:33 handle_config.o
--rw-r--r--   1 frmarinh  2015_paris   218224 Mar 11 04:33 handle_program.o
--rw-r--r--   1 frmarinh  2015_paris   172928 Mar 11 04:33 handle_taskmaster_var.o
+-rw-r--r--   1 frmarinh  2015_paris    92004 Mar 11 04:56 check_all_program.o
+-rw-r--r--   1 frmarinh  2015_paris   167940 Mar 11 04:57 check_cmd.o
+-rw-r--r--   1 frmarinh  2015_paris   327428 Mar 11 04:56 config.o
+-rw-r--r--   1 frmarinh  2015_paris     1279 Mar 11 04:53 config_file
+-rw-r--r--   1 frmarinh  2015_paris   125348 Mar 11 04:57 env.o
+-rw-r--r--   1 frmarinh  2015_paris    55808 Mar 11 04:56 ft_libft.o
+-rw-r--r--   1 frmarinh  2015_paris    93700 Mar 11 04:57 get_help_cmd.o
+-rw-r--r--   1 frmarinh  2015_paris   161252 Mar 11 04:56 get_new_program.o
+-rw-r--r--   1 frmarinh  2015_paris   180536 Mar 11 04:57 get_process_status.o
+-rw-r--r--   1 frmarinh  2015_paris   224960 Mar 11 04:56 get_program_args.o
+-rw-r--r--   1 frmarinh  2015_paris   193724 Mar 11 04:56 handle_cmd.o
+-rw-r--r--   1 frmarinh  2015_paris   173908 Mar 11 04:56 handle_config.o
+-rw-r--r--   1 frmarinh  2015_paris   218224 Mar 11 04:57 handle_program.o
+-rw-r--r--   1 frmarinh  2015_paris   172928 Mar 11 04:56 handle_taskmaster_var.o
 drwxr-xr-x   2 frmarinh  2015_paris     4096 Mar 10 04:35 includes
 drwxr-xr-x   2 frmarinh  2015_paris     4096 Mar 11 04:19 logs
--rw-r--r--   1 frmarinh  2015_paris    59928 Mar 11 04:33 logs.o
--rw-r--r--   1 frmarinh  2015_paris   154088 Mar 11 04:33 main.o
--rw-r--r--   1 frmarinh  2015_paris   119308 Mar 11 04:33 print_error.o
--rw-r--r--   1 frmarinh  2015_paris   257724 Mar 11 04:33 read_user_entry.o
--rw-r--r--   1 frmarinh  2015_paris   173668 Mar 11 04:33 reload.o
--rwxr-xr-x   1 frmarinh  2015_paris  5246724 Mar 11 04:41 slt
+-rw-r--r--   1 frmarinh  2015_paris    59928 Mar 11 04:57 logs.o
+-rw-r--r--   1 frmarinh  2015_paris   154088 Mar 11 04:56 main.o
+-rw-r--r--   1 frmarinh  2015_paris   119308 Mar 11 04:56 print_error.o
+-rw-r--r--   1 frmarinh  2015_paris   257724 Mar 11 04:57 read_user_entry.o
+-rw-r--r--   1 frmarinh  2015_paris   173668 Mar 11 04:57 reload.o
+-rwxr-xr-x   1 frmarinh  2015_paris  5248347 Mar 11 04:57 slt
 drwxr-xr-x   2 frmarinh  2015_paris     4096 Mar 10 23:39 srcs
--rw-r--r--   1 frmarinh  2015_paris   185888 Mar 11 04:33 start_program.o
--rw-r--r--   1 frmarinh  2015_paris   159052 Mar 11 04:33 stop_program.o
--rwxr-xr-x   1 frmarinh  2015_paris   290776 Mar 11 04:33 taskmaster
--rwxr-xr-x   1 frmarinh  2015_paris   494484 Mar 11  2016 test
--rw-r--r--   1 frmarinh  2015_paris   130172 Mar 11 04:33 utils.o
+-rw-r--r--   1 frmarinh  2015_paris   185888 Mar 11 04:57 start_program.o
+-rw-r--r--   1 frmarinh  2015_paris   159052 Mar 11 04:57 stop_program.o
+-rwxr-xr-x   1 frmarinh  2015_paris   290776 Mar 11 04:57 taskmaster
+-rwxr-xr-x   1 frmarinh  2015_paris   495653 Mar 11 04:57 test
+-rw-r--r--   1 frmarinh  2015_paris   130172 Mar 11 04:57 utils.o
 
 ./work/taskmaster/.git:
 total 80
-drwxr-xr-x    8 frmarinh  2015_paris  4096 Mar 11 04:41 .
-drwxrwxrwx    6 frmarinh  2015_paris  4096 Mar 11 04:33 ..
--rw-r--r--    1 frmarinh  2015_paris    17 Mar 11 04:20 COMMIT_EDITMSG
+drwxr-xr-x    8 frmarinh  2015_paris  4096 Mar 11 04:57 .
+drwxrwxrwx    6 frmarinh  2015_paris  4096 Mar 11 04:57 ..
+-rw-r--r--    1 frmarinh  2015_paris    17 Mar 11 04:41 COMMIT_EDITMSG
 -rw-r--r--    1 frmarinh  2015_paris   111 Feb 26 01:02 FETCH_HEAD
 -rw-r--r--    1 frmarinh  2015_paris    23 Feb 26 00:58 HEAD
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 26 00:58 branches
 -rw-r--r--    1 frmarinh  2015_paris   229 Feb 26 01:01 config
 -rw-r--r--    1 frmarinh  2015_paris    73 Feb 26 00:58 description
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 26 00:58 hooks
--rw-r--r--    1 frmarinh  2015_paris  5214 Mar 11 04:37 index
+-rw-r--r--    1 frmarinh  2015_paris  5214 Mar 11 04:57 index
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 26 00:58 info
 drwxr-xr-x    3 frmarinh  2015_paris  4096 Feb 26 01:02 logs
 drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 objects
@@ -6588,12 +6588,12 @@ drwxr-xr-x    5 frmarinh  2015_paris  4096 Feb 26 01:02 refs
 ./work/taskmaster/.git/branches:
 total 16
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Feb 26 00:58 .
-drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
+drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:57 ..
 
 ./work/taskmaster/.git/hooks:
 total 49
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Feb 26 00:58 .
-drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
+drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:57 ..
 -rwxr-xr-x  1 frmarinh  2015_paris   478 Feb 26 00:58 applypatch-msg.sample
 -rwxr-xr-x  1 frmarinh  2015_paris   896 Feb 26 00:58 commit-msg.sample
 -rwxr-xr-x  1 frmarinh  2015_paris   189 Feb 26 00:58 post-update.sample
@@ -6607,14 +6607,14 @@ drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
 ./work/taskmaster/.git/info:
 total 17
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Feb 26 00:58 .
-drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
+drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:57 ..
 -rw-r--r--  1 frmarinh  2015_paris   240 Feb 26 00:58 exclude
 
 ./work/taskmaster/.git/logs:
-total 37
+total 38
 drwxr-xr-x  3 frmarinh  2015_paris  4096 Feb 26 01:02 .
-drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
--rw-r--r--  1 frmarinh  2015_paris  6500 Mar 11 04:20 HEAD
+drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:57 ..
+-rw-r--r--  1 frmarinh  2015_paris  6666 Mar 11 04:41 HEAD
 drwxr-xr-x  4 frmarinh  2015_paris  4096 Feb 26 01:02 refs
 
 ./work/taskmaster/.git/logs/refs:
@@ -6625,10 +6625,10 @@ drwxr-xr-x  2 frmarinh  2015_paris  4096 Feb 26 01:02 heads
 drwxr-xr-x  3 frmarinh  2015_paris  4096 Feb 26 01:02 remotes
 
 ./work/taskmaster/.git/logs/refs/heads:
-total 29
+total 30
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Feb 26 01:02 .
 drwxr-xr-x  4 frmarinh  2015_paris  4096 Feb 26 01:02 ..
--rw-r--r--  1 frmarinh  2015_paris  6500 Mar 11 04:20 master
+-rw-r--r--  1 frmarinh  2015_paris  6666 Mar 11 04:41 master
 
 ./work/taskmaster/.git/logs/refs/remotes:
 total 24
@@ -6645,7 +6645,7 @@ drwxr-xr-x  3 frmarinh  2015_paris  4096 Feb 26 01:02 ..
 ./work/taskmaster/.git/objects:
 total 1880
 drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 .
-drwxr-xr-x    8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
+drwxr-xr-x    8 frmarinh  2015_paris  4096 Mar 11 04:57 ..
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 00
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 01
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:06 02
@@ -6655,8 +6655,8 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 03:27 05
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:06 06
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 05:06 07
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  2 04:51 0a
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 0d
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 0e
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 0d
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 0e
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 29 05:05 0f
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  8 00:34 10
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:20 11
@@ -6687,7 +6687,7 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:06 2b
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 2c
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:06 2d
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 29 03:07 2e
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 02:43 2f
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 2f
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 05:26 30
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 28 22:52 31
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:14 32
@@ -6716,8 +6716,8 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:14 4a
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 4b
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:24 4d
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 4e
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  3 06:33 4f
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  2 04:51 50
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 4f
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 50
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 51
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:20 52
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 05:06 53
@@ -6742,7 +6742,7 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 69
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 6a
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 02:43 6b
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 6c
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 00:16 6d
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 6d
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:24 6e
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  3 06:33 70
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 29 03:07 71
@@ -6767,11 +6767,11 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 26 04:35 84
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 85
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 87
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 88
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 89
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 89
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 8a
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  8 02:35 8b
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 8c
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:14 8d
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 8d
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 00:16 8e
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 8f
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:06 91
@@ -6784,7 +6784,7 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 03:27 97
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:24 98
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:14 99
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 9a
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 05:26 9b
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 9b
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  2 02:28 9c
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:14 9e
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 03:27 9f
@@ -6792,13 +6792,13 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 00:16 a0
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 00:16 a2
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 26 03:58 a3
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 02:06 a4
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:24 a5
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 a5
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 a6
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  8 04:49 a7
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  2 02:28 a8
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 05:26 a9
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 05:26 aa
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  8 00:34 ab
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 ab
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 29 05:17 ac
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 00:16 ad
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 ae
@@ -6828,7 +6828,7 @@ drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:20 c6
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  8 04:49 c7
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 02:43 c8
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 00:16 c9
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Feb 29 05:23 ca
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 ca
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 02:08 cb
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 10 05:06 cc
 drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 02:43 cd
@@ -6949,15 +6949,17 @@ drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris  1057 Mar  2 04:51 8342522fee292b917e37bf620f817b3f20beb1
 
 ./work/taskmaster/.git/objects/0d:
-total 20
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:13 .
-drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
--r--r--r--    1 frmarinh  2015_paris  1738 Mar 11 04:13 bedd8bc7230154973b6f6ab9c97e8ab0fec8ae
+total 162
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
+drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris  72535 Mar 11 04:41 537406e35c770067c6f7a0bf633d72ea9edef7
+-r--r--r--    1 frmarinh  2015_paris   1738 Mar 11 04:13 bedd8bc7230154973b6f6ab9c97e8ab0fec8ae
 
 ./work/taskmaster/.git/objects/0e:
-total 104
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:13 .
+total 105
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris    172 Mar 11 04:41 164dfc4d7b85ab04a9c26f8d9724967aae65a0
 -r--r--r--    1 frmarinh  2015_paris    895 Mar  9 05:26 6d83b90349f24acaeece46da5a4be5a7692844
 -r--r--r--    1 frmarinh  2015_paris  43270 Mar 11 04:13 c805dace411c8861bd2e0d57094eeae591925d
 -r--r--r--    1 frmarinh  2015_paris    406 Feb 26 01:31 c88cfc90ed1eeab495e451bd9ec3eff9adb184
@@ -7192,13 +7194,14 @@ drwxr-xr-x  235 frmarinh  2015_paris    4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris  111039 Feb 29 03:07 b6a945f99deee41180f9a16216e7b5da51d637
 
 ./work/taskmaster/.git/objects/2f:
-total 224
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar  9 02:43 .
+total 371
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris  85996 Mar  9 02:43 0449acb0e63fcc09c01e9c8b781327a633db10
 -r--r--r--    1 frmarinh  2015_paris    308 Mar  8 02:08 10a84e824eddd5d755ff1b1499a1728043bcd1
 -r--r--r--    1 frmarinh  2015_paris    384 Feb 29 05:05 5e18d3132a2d47fbce26abeca421d9e2b85159
 -r--r--r--    1 frmarinh  2015_paris  19433 Mar  9 00:07 83a13153aeb3f6bcf1abda0b9356d369dd8e58
+-r--r--r--    1 frmarinh  2015_paris  75119 Mar 11 04:41 c5a14f294e2b9d691863e74e6a8db70b407f3d
 
 ./work/taskmaster/.git/objects/30:
 total 64
@@ -7408,16 +7411,18 @@ drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris    182 Mar 10 05:06 df548baa78f427257bc6fcea746f4b84fafa22
 
 ./work/taskmaster/.git/objects/4f:
-total 67
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar  3 06:33 .
-drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
--r--r--r--    1 frmarinh  2015_paris  26085 Mar  3 06:33 4e117bbe478a45896f77a259affe1f9feaba2e
+total 1186
+drwxr-xr-x    2 frmarinh  2015_paris    4096 Mar 11 04:41 .
+drwxr-xr-x  235 frmarinh  2015_paris    4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris   26085 Mar  3 06:33 4e117bbe478a45896f77a259affe1f9feaba2e
+-r--r--r--    1 frmarinh  2015_paris  572610 Mar 11 04:41 61552d3570e42b61b0228b66155b892b540469
 
 ./work/taskmaster/.git/objects/50:
-total 17
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  2 04:51 .
+total 19
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris   383 Mar  2 04:51 ec9cac52b21b1c2948e4bf4cae6c90974d6d3b
+-r--r--r--    1 frmarinh  2015_paris   650 Mar 11 04:41 f417ff1b9fdc091fc03fd34d292cd9e5179bef
 
 ./work/taskmaster/.git/objects/51:
 total 125
@@ -7605,9 +7610,10 @@ drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris    546 Mar 10 00:18 70f6828725572022adab8702134cae7c268e04
 
 ./work/taskmaster/.git/objects/6d:
-total 128
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 10 00:16 .
+total 130
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris    674 Mar 11 04:41 423293644e1d6b60aaa6cb51d7b21c8ea7d000
 -r--r--r--    1 frmarinh  2015_paris  57038 Mar 10 00:16 5a5975f4c9243bdd51a5125c21277655a9c3c6
 
 ./work/taskmaster/.git/objects/6e:
@@ -7791,9 +7797,10 @@ drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris  1412 Mar 11 02:08 e55e49c87c914adf4eb67c97ecf4d568181d6f
 
 ./work/taskmaster/.git/objects/89:
-total 243
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 02:08 .
+total 244
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris    496 Mar 11 04:41 09179b267449432e19c37274fc9432144e5056
 -r--r--r--    1 frmarinh  2015_paris    727 Mar  9 03:27 1def5aae136997d603b4a9325694727f932fe6
 -r--r--r--    1 frmarinh  2015_paris    417 Feb 29 05:37 47c04325ed428258982032fdc08d3e66e6ca6a
 -r--r--r--    1 frmarinh  2015_paris  69227 Mar 11 02:08 8e559a792b2709a6fdb040859b6e4f05c154ee
@@ -7822,9 +7829,10 @@ drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris   663 Mar  9 03:27 621ae9fd5906c8cece539f70efb83d9c09ce77
 
 ./work/taskmaster/.git/objects/8d:
-total 346
-drwxr-xr-x    2 frmarinh  2015_paris    4096 Mar 10 02:14 .
+total 456
+drwxr-xr-x    2 frmarinh  2015_paris    4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris    4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris   56003 Mar 11 04:41 44a521e05710f8a04c4031c470f36f53367869
 -r--r--r--    1 frmarinh  2015_paris   58123 Mar 10 02:14 90a51ebfad692a7fef8ecbcfc0f162691415e4
 -r--r--r--    1 frmarinh  2015_paris  110476 Feb 29 05:05 b692835f4c129ad835e8184909ca3536c715a2
 
@@ -7917,11 +7925,12 @@ drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris  20871 Mar 11 02:08 a0d1b33f655d01f5a707ac1b548bf39bcaa63b
 
 ./work/taskmaster/.git/objects/9b:
-total 21
-drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar  9 05:26 .
+total 23
+drwxr-xr-x    2 frmarinh  2015_paris  4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris   855 Feb 29 03:07 9a2006c98ef2c8f799f9e76f0a7ae9fbfc6e6f
 -r--r--r--    1 frmarinh  2015_paris   705 Mar  9 05:26 ab7b6bb060ed2a13016d55badc744ab03bff29
+-r--r--r--    1 frmarinh  2015_paris  1008 Mar 11 04:41 be93f77cc92910da76689c9516457db7174821
 -r--r--r--    1 frmarinh  2015_paris   172 Mar  8 02:35 cf4a3d3c503d69f3a221aa09eab48ff244c8eb
 
 ./work/taskmaster/.git/objects/9c:
@@ -7973,9 +7982,10 @@ drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris  58126 Mar 10 02:06 6d2ad50113d353ffbb6b7d03cf142af315f6f8
 
 ./work/taskmaster/.git/objects/a5:
-total 169
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 02:24 .
+total 228
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris  29955 Mar 11 04:41 143a10e4febb6de89460eff9d6d94311f8716f
 -r--r--r--    1 frmarinh  2015_paris  77255 Mar  8 04:49 85bc53bdb35e3af364ac5a3198a20b29e3c84f
 -r--r--r--    1 frmarinh  2015_paris   1009 Mar 11 02:24 e51b68e9379ebe115ae263635a7014b7ad7a0f
 
@@ -8019,12 +8029,13 @@ drwxr-xr-x  235 frmarinh  2015_paris  4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris   117 Mar  9 05:26 84a4d09c3aca59b6e0cee482f23ba41288cfdd
 
 ./work/taskmaster/.git/objects/ab:
-total 81
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar  8 00:34 .
-drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
--r--r--r--    1 frmarinh  2015_paris   1158 Mar  2 02:57 6e1c3c012ed9a3080f16b7e4b0653a2f72f07f
--r--r--r--    1 frmarinh  2015_paris  31096 Mar  8 00:34 c2d1f12f2ea896756a2027e0df4f2a75abe3a2
--r--r--r--    1 frmarinh  2015_paris    456 Mar  8 00:34 c41fa7d07d74f916ab46caed420e5e6b8dfc87
+total 284
+drwxr-xr-x    2 frmarinh  2015_paris    4096 Mar 11 04:41 .
+drwxr-xr-x  235 frmarinh  2015_paris    4096 Mar 11 04:13 ..
+-r--r--r--    1 frmarinh  2015_paris  103485 Mar 11 04:41 3c52e00123b766a6434854f3b302ee247fd3bc
+-r--r--r--    1 frmarinh  2015_paris    1158 Mar  2 02:57 6e1c3c012ed9a3080f16b7e4b0653a2f72f07f
+-r--r--r--    1 frmarinh  2015_paris   31096 Mar  8 00:34 c2d1f12f2ea896756a2027e0df4f2a75abe3a2
+-r--r--r--    1 frmarinh  2015_paris     456 Mar  8 00:34 c41fa7d07d74f916ab46caed420e5e6b8dfc87
 
 ./work/taskmaster/.git/objects/ac:
 total 232
@@ -8244,12 +8255,13 @@ drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris   1495 Mar  9 03:27 eb2307c47854a5029487d5503c6b0db594e9e7
 
 ./work/taskmaster/.git/objects/ca:
-total 98
-drwxr-xr-x    2 frmarinh  2015_paris   4096 Feb 29 05:23 .
+total 100
+drwxr-xr-x    2 frmarinh  2015_paris   4096 Mar 11 04:41 .
 drwxr-xr-x  235 frmarinh  2015_paris   4096 Mar 11 04:13 ..
 -r--r--r--    1 frmarinh  2015_paris    536 Feb 29 05:23 2f3671916f9ae12eb4fd432e09fb5ae9f2cc40
 -r--r--r--    1 frmarinh  2015_paris    245 Feb 26 04:35 31519b3b6395828c4ddd7f6705fadec46e0f91
 -r--r--r--    1 frmarinh  2015_paris    111 Feb 29 00:17 a79f781bfd96b99eeb2cb5b006a09aac73ffea
+-r--r--r--    1 frmarinh  2015_paris    779 Mar 11 04:41 b732048c1f6a214a781f7781e0b468d3d9935d
 -r--r--r--    1 frmarinh  2015_paris  39847 Feb 26 05:09 be761dc0cd8c3e6ff860444b4bb2dcae652258
 
 ./work/taskmaster/.git/objects/cb:
@@ -8631,16 +8643,16 @@ drwxr-xr-x  235 frmarinh  2015_paris    4096 Mar 11 04:13 ..
 ./work/taskmaster/.git/refs:
 total 40
 drwxr-xr-x  5 frmarinh  2015_paris  4096 Feb 26 01:02 .
-drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:41 ..
-drwxr-xr-x  2 frmarinh  2015_paris  4096 Mar 11 04:20 heads
+drwxr-xr-x  8 frmarinh  2015_paris  4096 Mar 11 04:57 ..
+drwxr-xr-x  2 frmarinh  2015_paris  4096 Mar 11 04:41 heads
 drwxr-xr-x  3 frmarinh  2015_paris  4096 Feb 26 01:02 remotes
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Feb 26 00:58 tags
 
 ./work/taskmaster/.git/refs/heads:
 total 17
-drwxr-xr-x  2 frmarinh  2015_paris  4096 Mar 11 04:20 .
+drwxr-xr-x  2 frmarinh  2015_paris  4096 Mar 11 04:41 .
 drwxr-xr-x  5 frmarinh  2015_paris  4096 Feb 26 01:02 ..
--rw-r--r--  1 frmarinh  2015_paris    41 Mar 11 04:20 master
+-rw-r--r--  1 frmarinh  2015_paris    41 Mar 11 04:41 master
 
 ./work/taskmaster/.git/refs/remotes:
 total 24
@@ -8662,7 +8674,7 @@ drwxr-xr-x  5 frmarinh  2015_paris  4096 Feb 26 01:02 ..
 ./work/taskmaster/includes:
 total 47
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Mar 10 04:35 .
-drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:33 ..
+drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:57 ..
 -rw-r--r--@ 1 frmarinh  2015_paris  6148 Mar 10 04:35 .DS_Store
 -rw-r--r--  1 frmarinh  2015_paris  4096 Mar 10 04:35 ._.DS_Store
 -rw-r--r--  1 frmarinh  2015_paris  4807 Mar 11 03:57 all.h
@@ -8670,7 +8682,7 @@ drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:33 ..
 ./work/taskmaster/logs:
 total 221
 drwxr-xr-x  2 frmarinh  2015_paris   4096 Mar 11 04:19 .
-drwxrwxrwx  6 frmarinh  2015_paris   4096 Mar 11 04:33 ..
+drwxrwxrwx  6 frmarinh  2015_paris   4096 Mar 11 04:57 ..
 -rw-r--r--@ 1 frmarinh  2015_paris   6148 Mar 10 04:17 .DS_Store
 -rw-r--r--  1 frmarinh  2015_paris   4096 Mar 10 04:17 ._.DS_Store
 -rwxr-xr-x  1 frmarinh  2015_paris   5216 Mar 11 01:50 BONJOUR
@@ -8679,9 +8691,9 @@ drwxrwxrwx  6 frmarinh  2015_paris   4096 Mar 11 04:33 ..
 -rwxrwxrwx  1 frmarinh  2015_paris  87191 Mar 10 04:05 taskmaster.log
 
 ./work/taskmaster/srcs:
-total 173
+total 174
 drwxr-xr-x  2 frmarinh  2015_paris  4096 Mar 10 23:39 .
-drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:33 ..
+drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:57 ..
 -rw-r--r--@ 1 frmarinh  2015_paris  8196 Mar 10 23:39 .DS_Store
 -rw-r--r--  1 frmarinh  2015_paris  4096 Mar 10 04:17 ._.DS_Store
 -rw-r--r--  1 frmarinh  2015_paris  1317 Mar  3 02:03 check_all_program.cpp
@@ -8690,7 +8702,7 @@ drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:33 ..
 -rw-r--r--  1 frmarinh  2015_paris  1979 Mar  9 23:37 env.cpp
 -rw-r--r--  1 frmarinh  2015_paris  2470 Feb 26 02:20 file.cpp
 -rw-r--r--  1 frmarinh  2015_paris  3796 Mar 11 00:46 ft_libft.cpp
--rw-r--r--  1 frmarinh  2015_paris  1981 Mar 11 04:33 get_help_cmd.cpp
+-rw-r--r--  1 frmarinh  2015_paris  2151 Mar 11 04:56 get_help_cmd.cpp
 -rw-r--r--  1 frmarinh  2015_paris  2371 Mar 10 02:13 get_new_program.cpp
 -rw-r--r--  1 frmarinh  2015_paris  3696 Mar 11 04:14 get_process_status.cpp
 -rw-r--r--  1 frmarinh  2015_paris  7357 Mar 11 03:39 get_program_args.cpp
@@ -8704,7 +8716,7 @@ drwxrwxrwx  6 frmarinh  2015_paris  4096 Mar 11 04:33 ..
 -rw-r--r--  1 frmarinh  2015_paris  6960 Mar  9 01:45 read_user_entry.cpp
 -rw-r--r--  1 frmarinh  2015_paris  1954 Mar  9 23:54 reload.cpp
 -rw-r--r--  1 frmarinh  2015_paris  2177 Mar 11 02:07 start_program.cpp
--rw-r--r--  1 frmarinh  2015_paris  2630 Mar 11 04:10 stop_program.cpp
+-rw-r--r--  1 frmarinh  2015_paris  2634 Mar 11 04:56 stop_program.cpp
 -rw-r--r--  1 frmarinh  2015_paris  1597 Mar  9 22:55 utils.cpp
 
 ./work/test:

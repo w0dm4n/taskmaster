@@ -53,6 +53,11 @@ void	get_help_cmd(vector<string> args)
 			print ("stop <name>			Stop multiple or single process by name\n");
 			print ("stop all			Stop all process");
 		}
+		else if (topic == "restart")
+		{
+			print("restart <name>		Restart multiple or single process by name\n");
+			print("restart all             Restart all process");
+		}
 		else
 			print_fd("*** No help on " + topic, 2);
 	}
