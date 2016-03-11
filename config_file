@@ -47,4 +47,11 @@
 	%set_umask;6354
 	%print_on_taskmaster;false;
 )
+#new_program{gygylenoob}
+(
+	%executable_path;/bin/cat;
+	%set_env;blabla;lol;
+	%working_dir;~/;
+	%set_umask;7777;
+)
 [end_taskmaster]
