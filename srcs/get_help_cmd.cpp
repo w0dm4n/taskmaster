@@ -21,7 +21,7 @@ void	get_help_cmd(vector<string> args)
 		print("\n");
 		print("default commands (type help <topic>):\n");
 		print("=====================================\n");
-		print("status	start	stop	reload");
+		print("status	  start	  stop	 reload    restart");
 		print("\n");
 	}
 	else

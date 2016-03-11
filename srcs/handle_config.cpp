@@ -12,6 +12,18 @@
 
 #include "all.h"
 
+bool	program_to_auto_start(vector<program> program_list)
+{
+	int i = 0;
+	while (i < program_list.size())
+	{
+		if (program_list[i].auto_start)
+			return (true);
+		i++;
+	}
+	return (false);
+}
+
 void	handle_config(string config_name)
 {
 	config_infos config;
@@ -25,32 +37,21 @@ void	handle_config(string config_name)
 		add_in_logs(TaskMasterValue::Current().LogFilePath, "Configuration file generated");
 	if (check_all_program(program_list))
 	{
-		//launch process in auto start
+		if (program_to_auto_start(program_list))
+		{
+			print(" *** Auto starting program start ***\n");
+			int i = 0;
+			while (i < program_list.size())
+			{
+				if (program_list[i].auto_start)
+					program_list = handle_program(program_list[i], i, program_list);
+				i++;
+			}
+			print("*** Auto starting program end ***\n\n");
+		}
+
 		TaskMasterValue::Current().ConfigFileName = config_name;
 		print("taskmaster> ");
 		read_user_entry(program_list);
 	}
-	/*int i = 0;
-	int env = 0;
-	while (i != program_list.size())
-	{
-		if (program_list[i].program_name.length())
-			cout << "PROGAM TO START NAME : " << program_list[i].program_name << endl;
-		if (program_list[i].executable_path.length())
-			cout << "EXECUTABLE_PATH : " << program_list[i].executable_path << endl;
-		if (program_list[i].executable_argument.length())
-			cout << "EXECUTABLE_ARGUMENT : " << program_list[i].executable_argument << endl;
-		if (program_list[i].auto_start && program_list[i].env_to_set.size())
-		{
-			cout << "ENVIRONMENT VARIABLES TO SET : " << endl;
-			while (env != program_list[i].env_to_set.size())
-			{
-				cout << program_list[i].env_to_set[env] << endl;
-				env++;
-			}
-		}
-		cout << endl << endl;
-		i++;
-		env = 0;
-	}*/
 }
