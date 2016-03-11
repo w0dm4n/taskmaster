@@ -65,7 +65,10 @@ vector<program> stop_program(vector<string> args, vector<program> program_list)
 						}
 					}
 					else
+					{
 						print("*** Program " + program_list[p_i].program_name + " doesn't seems to be started.");
+						program_list[p_i].pid = 0;
+					}
 					found = true;
 				}
 				p_i++;

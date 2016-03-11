@@ -5,14 +5,15 @@
 	%executable_path;/bin/ls;
 	%executable_argument;-l -R -a /;
 	%set_env;test;blabla;
+	%set_env;bonjour;slt;
 	%working_dir;~/Desktop;
 	%auto_start;true;
-	//%exit_signal;SIGINT;
-	%stderror_to_file;~/Desktop/work/log/$program_name.log;
-	%stdout_to_file;~/blabla
+	%exit_signal;SIGINT;
+	%stderror_to_file;~/Desktop/work/log/laflemme.log;
+	%stdout_to_file;test
 	//close_stdout;true
 	//close_stderror;true
-	%set_umask;0
+	%set_umask;1234
 	//%print_on_taskmaster;false
 )
 #new_program{bonjour}

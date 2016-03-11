@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "all.h"
+#include <fcntl.h>
 
 vector<string> split(char *str, const char *delim)
 {
@@ -85,10 +86,26 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 	TaskMasterValue::Current().ExitProgramOnError = false;
 	if (check_folder(to.working_dir, to.program_name))
 	{
+		int file_stdout = 0;
 		add_in_logs(TaskMasterValue::Current().LogFilePath, "The program " + to.program_name + " was launched.");
 		to.Environment_Data = TaskMasterValue::Current().DefaultEnvironment;
 		if (to.env_to_set.size())
 			to.GetEnvToSet(to.env_to_set);
+		if (to.stdout_to_file.length())
+		{
+			file_stdout = open(to.stdout_to_file.c_str(), O_RDWR);
+			if (file_stdout == -1)
+			{
+				close (file_stdout);
+				if ((file_stdout = open(to.stdout_to_file.c_str(), O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO)) == -1)
+					print_error(-1, "Can't set stdout to the asked file");
+				else
+				{
+					close (file_stdout);
+					file_stdout = open(to.stdout_to_file.c_str(), O_RDWR);
+				}
+			}
+		}
 		pid_t child;
 		int child_status;
 		int fd[2];
@@ -96,6 +113,8 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 		child = fork();
 		if (child == 0)
 		{
+			if (file_stdout)
+				dup2(file_stdout, 1);
 			pid_t process = getpid();
 			print_nbr_fd(process, fd[1]);
 			close(fd[1]);
@@ -106,7 +125,8 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 			if (!to.print_on_taskmaster)
 			{
 				close (0);
-				close (1);
+				if (file_stdout == 0 || file_stdout == -1)
+					close (1);
 				close (2);
 			}
 			chdir(to.working_dir.c_str());

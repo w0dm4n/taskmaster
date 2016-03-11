@@ -32,6 +32,7 @@
 # define STDERROR_CLOSE 18
 # define STDOUT_CLOSE 19
 # define PRINT_ON_TASKMASTER 20
+# define EXIT_SIGNAL 21
 # define WHITE_COLOR "\e[1;37m"
 # define ENTRY 10
 # define BACKSPACE 127

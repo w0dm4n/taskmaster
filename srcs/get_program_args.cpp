@@ -36,6 +36,8 @@ static int			get_variable_state(string var)
 		return (STDOUT_CLOSE);
 	else if (var == "print_on_taskmaster")
 		return (PRINT_ON_TASKMASTER);
+	else if (var == "exit_signal")
+		return (EXIT_SIGNAL);
 	return (UNKNOWN_VARIABLE);
 }
 
@@ -203,6 +205,18 @@ static program		check_variable_and_set(string line, program tmp, int position)
 				}
 				else
 					print_error(position, "taskmaster: print_stdout bad syntax");
+			break;
+
+			case EXIT_SIGNAL:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+						tmp.exit_signal_to_set = args[1];
+					else
+						print_error(position, "taskmaster: exit_signal variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: exit_signal bad syntax");
 			break;
 
 			default:
