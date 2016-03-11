@@ -12,7 +12,7 @@
 
 #include "all.h"
 
-void		start_program(vector<string> args, vector<program> program_list)
+vector<program>		start_program(vector<string> args, vector<program> program_list)
 {
 	if (!args.size())
 	{
@@ -30,7 +30,7 @@ void		start_program(vector<string> args, vector<program> program_list)
 			}
 			while (i < program_list.size())
 			{
-				handle_program(program_list[i]);
+				program_list = handle_program(program_list[i], i, program_list);
 				i++;
 			}
 		}
@@ -45,7 +45,7 @@ void		start_program(vector<string> args, vector<program> program_list)
 				{
 					if (program_list[p_i].program_name == args[i])
 					{
-						handle_program(program_list[p_i]);
+						program_list = handle_program(program_list[p_i], p_i, program_list);
 						found = true;
 					}
 					p_i++;
@@ -64,4 +64,5 @@ void		start_program(vector<string> args, vector<program> program_list)
 			}
 		}
 	}
+	return (program_list);
 }

@@ -75,8 +75,13 @@ char		**get_program_env(vector<string> data)
 	return (env_new);
 }
 
-void		handle_program(program to)
+vector<program>		handle_program(program to, int pos, vector<program> program_list)
 {
+	if (program_list[pos].pid != 0)
+	{
+		print("*** Program " + program_list[pos].program_name + " already started (type help restart).\n");
+		return (program_list);
+	}
 	TaskMasterValue::Current().ExitProgramOnError = false;
 	if (check_folder(to.working_dir, to.program_name))
 	{
@@ -85,11 +90,15 @@ void		handle_program(program to)
 		if (to.env_to_set.size())
 			to.GetEnvToSet(to.env_to_set);
 		pid_t child;
-		child = fork();
 		int child_status;
+		int fd[2];
+		pipe(fd);
+		child = fork();
 		if (child == 0)
 		{
-			// try to pipe && save child pid for closure feature
+			pid_t process = getpid();
+			print_nbr_fd(process, fd[1]);
+			close(fd[1]);
 			if (to.set_umask.length())
 				umask((unsigned short)atoi(to.set_umask.c_str()));
 			char	**env = get_program_env(to.Environment_Data);
@@ -110,7 +119,12 @@ void		handle_program(program to)
 				wait(&child_status);
 			else
 			{
-				print("*** Program " + to.program_name + " successfully launched ***\n");
+				char program_pid[1024];
+				int res = read(fd[0], program_pid, 1024);
+				program_pid[res] = '\0';
+				program_list[pos].pid = atoi(program_pid);
+				print("*** Program " + to.program_name + " successfully launched (" + program_pid + ") ***\n");
+				return (program_list);
 			}
 		}
 	}
@@ -120,4 +134,5 @@ void		handle_program(program to)
 		print("*** Can't launch the program " + to.program_name + "\n");
 	}
 	TaskMasterValue::Current().Errors = 0;
+	return (program_list);
 }

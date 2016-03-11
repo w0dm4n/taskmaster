@@ -178,6 +178,27 @@ void			ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+void			ft_putchar_fd(char print, int fd)
+{
+	write(fd, &print, 1);
+}
+
+void			print_nbr_fd(int nbr, int fd)
+{
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
+	}
+	if (nbr >= 10)
+	{
+		print_nbr_fd(nbr / 10, fd);
+		print_nbr_fd(nbr % 10, fd);
+	}
+	else
+		ft_putchar_fd(nbr + 48, fd);
+}
+
 void			print_nbr(int nbr)
 {
 	if (nbr < 0)

@@ -1,5 +1,5 @@
 [taskmaster]
-%taskmaster_log_file;~/Desktop/work/taskmaster/logs/BONJOUR;
+%taskmaster_log_file;~/Desktop/work/taskmaster/slt;
 #new_program{test}
 (
 	%executable_path;/bin/ls;

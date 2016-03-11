@@ -21,6 +21,8 @@ void	handle_config(string config_name)
 	TaskMasterValue::Current().ExitProgramOnError = true;
 	if (config.check_if_config_exist())
 		program_list = config.read_config(program_list);
+	if (!TaskMasterValue::Current().LogFilePathExist)
+		add_in_logs(TaskMasterValue::Current().LogFilePath, "Configuration file generated");
 	if (check_all_program(program_list))
 	{
 		//launch process in auto start

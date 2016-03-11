@@ -223,6 +223,8 @@ program		get_program_args(int start, vector<string> data, int end, string name)
 		print_error(start, "program name missing !");
 	tmp.program_name = name;
 	tmp.auto_start = false;
+	tmp.print_on_taskmaster = false;
+	tmp.pid = 0;
 	while (start != end)
 	{
 		tmp = check_variable_and_set(data[start], tmp, (start + 2));

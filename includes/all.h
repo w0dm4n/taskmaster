@@ -16,6 +16,7 @@
 #include <fstream>
 #include <vector>
 #include <sys/stat.h> 
+#include <signal.h>
 # define VAR_SYNTHAX '%'
 # define NEW_PROGRAM_SYNTHAX '#'
 # define LOG_FILE 0
@@ -60,6 +61,7 @@ class program
 	bool			close_stdout;
 	bool			close_stderror;
 	vector<string>	Environment_Data;
+	int				pid;
 	void		   GetEnvToSet(vector<string> env_to_set);
 	void		   FindAndSet(char *variable, char *value);
 };
@@ -125,11 +127,13 @@ void		get_help_cmd(vector<string> args);
 int			ft_is_all_print(char *str);
 void		get_process_status(vector<string> args, vector<program> program_list);
 vector<program>		reload(vector<string> args, vector<program> program_list);
-void				start_program(vector<string> args, vector<program> program_list);
-void				handle_program(program to);
+vector<program>		start_program(vector<string> args, vector<program> program_list);
+vector<program>		handle_program(program to, int pos, vector<program> program_list);
 void				add_in_logs(string file_path, string content);
 int					check_folder(string folder, string program_name);
 vector<string> 		get_environment_vector(char **env);
+vector<program> 	stop_program(vector<string> args, vector<program> program_list);
+void				print_nbr_fd(int nbr, int fd);
 
 /*
 				vector<program> program_list;
