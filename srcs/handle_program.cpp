@@ -87,6 +87,7 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 	if (check_folder(to.working_dir, to.program_name))
 	{
 		int file_stdout = 0;
+		int file_stderror = 0;
 		add_in_logs(TaskMasterValue::Current().LogFilePath, "The program " + to.program_name + " was launched.");
 		to.Environment_Data = TaskMasterValue::Current().DefaultEnvironment;
 		if (to.env_to_set.size())
@@ -106,6 +107,21 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 				}
 			}
 		}
+		if (to.stderror_to_file.length())
+		{
+			file_stderror = open(to.stderror_to_file.c_str(), O_RDWR);
+			if (file_stderror == -1)
+			{
+				close (file_stderror);
+				if ((file_stderror = open(to.stderror_to_file.c_str(), O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO)) == -1)
+					print_error(-1, "Can't set stderror to the asked file");
+				else
+				{
+					close (file_stderror);
+					file_stderror = open(to.stderror_to_file.c_str(), O_RDWR);
+				}
+			}
+		}
 		pid_t child;
 		int child_status;
 		int fd[2];
@@ -115,6 +131,8 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 		{
 			if (file_stdout)
 				dup2(file_stdout, 1);
+			if (file_stderror)
+				dup2(file_stderror, 2);
 			pid_t process = getpid();
 			print_nbr_fd(process, fd[1]);
 			close(fd[1]);
@@ -127,7 +145,8 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 				close (0);
 				if (file_stdout == 0 || file_stdout == -1)
 					close (1);
-				close (2);
+				if (file_stderror == 0 || file_stderror == -1)
+					close (2);
 			}
 			chdir(to.working_dir.c_str());
 			execve(to.executable_path.c_str(), get_program_args(to.executable_path, to.executable_argument), env);

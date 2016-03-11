@@ -66,11 +66,8 @@ void		print_program_informations(vector<program> program_list, int p_i)
 		print ("Redirect STDERR from the executable to : " + program_list[p_i].stderror_to_file + "\n");
 	if (program_list[p_i].exit_signal_to_set.length())
 		print("EXIT SIGNAL : " + program_list[p_i].exit_signal_to_set + "\n");
-	if (program_list[p_i].print_on_taskmaster)
-	{
-		print("Print executable to taskmaster : ");
-		(program_list[p_i].print_on_taskmaster) ? print("TRUE\n") : print("FALSE\n");
-	}
+	print("Print executable to taskmaster : ");
+	(program_list[p_i].print_on_taskmaster) ? print("TRUE\n") : print("FALSE\n");
 }
 
 void		get_process_status(vector<string> args, vector<program> program_list)
