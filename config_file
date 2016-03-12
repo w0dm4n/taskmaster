@@ -1,5 +1,6 @@
 [taskmaster]
-%taskmaster_log_file;~/Desktop/work/taskmaster/slt;
+%taskmaster_log_file;~/Desktop/work/taskmaster/test;
+//%auto_restart_timer;10;
 #new_program{test}
 (
 	%executable_path;/bin/ls;
@@ -8,13 +9,16 @@
 	%set_env;bonjour;slt;
 	%working_dir;~/Desktop;
 	%auto_start;false;
-	%exit_signal;SIGINT;
+	%exit_signal;SIGUSR1;
 	//%stderror_to_file;~/Desktop/work/taskmaster/logs/laflemme.log;
-	%stdout_to_file;test
+	%stdout_to_file;~/Desktop/work/taskmaster/ls.log
 	//close_stdout;true
 	//close_stderror;true
 	%set_umask;1234
 	//%print_on_taskmaster;false
+	%auto_restart;true
+	%stop_time;10
+	%start_time;100;
 )
 
 #new_program{bonjour}
@@ -46,9 +50,9 @@
 #new_program{create_file}
 (
 	%executable_path;/usr/bin/touch
-	%executable_argument;slt
+	%executable_argument;BJR
 	%working_dir;~/Desktop/work/taskmaster
-	%set_umask;6354
+	%set_umask;7777
 	%print_on_taskmaster;false;
 )
 #new_program{gygylenoob}
