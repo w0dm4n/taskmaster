@@ -17,6 +17,7 @@
 #include <vector>
 #include <sys/stat.h> 
 #include <signal.h>
+#include <errno.h>
 # define VAR_SYNTHAX '%'
 # define NEW_PROGRAM_SYNTHAX '#'
 # define LOG_FILE 0
@@ -33,6 +34,9 @@
 # define STDOUT_CLOSE 19
 # define PRINT_ON_TASKMASTER 20
 # define EXIT_SIGNAL 21
+# define AUTO_RESTART 22
+# define START_TIME 23
+# define STOP_TIME 24
 # define WHITE_COLOR "\e[1;37m"
 # define ENTRY 10
 # define BACKSPACE 127
@@ -61,6 +65,9 @@ class program
 	bool			print_on_taskmaster;
 	bool			close_stdout;
 	bool			close_stderror;
+	bool			auto_restart;
+	int				start_time;
+	int				stop_time;
 	vector<string>	Environment_Data;
 	int				pid;
 	void		   GetEnvToSet(vector<string> env_to_set);
@@ -135,23 +142,6 @@ int					check_folder(string folder, string program_name);
 vector<string> 		get_environment_vector(char **env);
 vector<program> 	stop_program(vector<string> args, vector<program> program_list);
 void				print_nbr_fd(int nbr, int fd);
-
-/*
-				vector<program> program_list;
-				program new_prog;
-				new_prog.program_name = "test";
-				program_list.push_back(new_prog);
-				cout << program_list[0].program_name;
-*/
-
-/*
-CHMOD =
-1 -> x
-2 -> w
-3 -> wx
-4 -> r
-5 -> rx
-6 -> rw
-7 -> rwx
-*/
+vector<program>		restart_program(vector<string> args, vector<program> program_list);
+int					ft_isdigit(int c);
 #endif

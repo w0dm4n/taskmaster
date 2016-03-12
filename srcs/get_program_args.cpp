@@ -38,6 +38,12 @@ static int			get_variable_state(string var)
 		return (PRINT_ON_TASKMASTER);
 	else if (var == "exit_signal")
 		return (EXIT_SIGNAL);
+	else if (var == "auto_restart")
+		return (AUTO_RESTART);
+	else if (var == "start_time")
+		return (START_TIME);
+	else if (var == "stop_time")
+		return (STOP_TIME);
 	return (UNKNOWN_VARIABLE);
 }
 
@@ -45,7 +51,9 @@ static program		check_variable_and_set(string line, program tmp, int position)
 {
 	vector<string>	args;
 	int				i;
+	bool			found;
 
+	found = false;
 	i = 0;
 	args = get_args(line, args, ';');
 		switch (get_variable_state(args[0]))
@@ -219,6 +227,67 @@ static program		check_variable_and_set(string line, program tmp, int position)
 					print_error(position, "taskmaster: exit_signal bad syntax");
 			break;
 
+			case AUTO_RESTART:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+						if (args[1] == "true")
+							tmp.auto_restart = true;
+					}
+					else
+						print_error(position, "taskmaster: auto_restart variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: auto_restart bad syntax");
+			break;
+
+			case START_TIME:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+						while (args[1][i])
+						{
+							if (!ft_isdigit(args[1][i]))
+								found = true;
+							i++;
+						}
+						if (!found)
+							tmp.start_time = atoi((const char*)args[1].c_str());
+						else
+							print_error(position, "taskmaster: start_time value must be entirely numeric !");
+					}
+					else
+						print_error(position, "taskmaster: start_time variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: start_time bad syntax");
+			break;
+
+			case STOP_TIME:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+						while (args[1][i])
+						{
+							if (!ft_isdigit(args[1][i]))
+								found = true;
+							i++;
+						}
+						if (!found)
+							tmp.stop_time = atoi((const char*)args[1].c_str());
+						else
+							print_error(position, "taskmaster: stop_time value must be entirely numeric !");
+					}
+					else
+						print_error(position, "taskmaster: stop_time variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: stop_time bad syntax");
+			break;
+
 			default:
 				if (args[0][0] != '/')
 					print_error(position, "unknown variable " + args[0]);
@@ -238,6 +307,8 @@ program		get_program_args(int start, vector<string> data, int end, string name)
 	tmp.program_name = name;
 	tmp.auto_start = false;
 	tmp.print_on_taskmaster = false;
+	tmp.auto_restart = false;
+	tmp.start_time = 0;
 	tmp.pid = 0;
 	while (start != end)
 	{

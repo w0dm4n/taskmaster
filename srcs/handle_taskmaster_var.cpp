@@ -81,7 +81,10 @@ static bool check_log_file_path(string full_path)
 		return (false);
 	}
 	if (log_file->st_mode & S_IRUSR)
+	{
+		TaskMasterValue::Current().LogFilePathExist = true;
 		return (true);
+	}
 	else
 	{
 		print_error(-1, "taskmaster: permission denied on the taskmaster log file");

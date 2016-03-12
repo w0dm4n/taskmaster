@@ -12,6 +12,22 @@
 
 #include "all.h"
 #include <fcntl.h>
+#include <time.h>
+
+string get_current_time() 
+{
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buff[80];
+    tstruct = *localtime(&now);
+    strftime(buff, sizeof(buff), "%m/%d at %H:%M", &tstruct);
+    return (buff);
+}
+
+string		add_day_n_hour(string content)
+{
+	return (content.insert(0, "[" + get_current_time() + "] "));
+}
 
 void		add_in_logs(string file_path, string content)
 {
@@ -39,6 +55,7 @@ void		add_in_logs(string file_path, string content)
 		logs_content += buffer;
 	}
 	logs_content += content;
+	content = add_day_n_hour(content);
 	write(fd, content.c_str(), strlen(content.c_str()));
 	close(fd);
 }
