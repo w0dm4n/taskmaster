@@ -68,6 +68,12 @@ void		print_program_informations(vector<program> program_list, int p_i)
 		print("EXIT SIGNAL : " + program_list[p_i].exit_signal_to_set + "\n");
 	print("Print executable to taskmaster : ");
 	(program_list[p_i].print_on_taskmaster) ? print("TRUE\n") : print("FALSE\n");
+	print("Process exit return : ");
+	print_nbr(program_list[p_i].exit_code);
+	print("\n");
+	print("Time before closing the process : ");
+	print_nbr(program_list[p_i].stop_time);
+	print("s\n");
 }
 
 void		get_process_status(vector<string> args, vector<program> program_list)

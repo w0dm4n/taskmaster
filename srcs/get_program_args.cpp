@@ -44,6 +44,8 @@ static int			get_variable_state(string var)
 		return (START_TIME);
 	else if (var == "stop_time")
 		return (STOP_TIME);
+	else if (var == "exit_code")
+		return (EXIT_CODE);
 	return (UNKNOWN_VARIABLE);
 }
 
@@ -288,6 +290,29 @@ program		check_variable_and_set(string line, program tmp, int position)
 					print_error(position, "taskmaster: stop_time bad syntax");
 			break;
 
+			case EXIT_CODE:
+				if (args.size() == 3)
+				{
+					if (args[1].length())
+					{
+						while (args[1][i])
+						{
+							if (!ft_isdigit(args[1][i]) && args[1][i] != '-')
+								found = true;
+							i++;
+						}
+						if (!found)
+							tmp.exit_code = atoi((const char*)args[1].c_str());
+						else
+							print_error(position, "taskmaster: exit_code value must be entirely numeric !");
+					}
+					else
+						print_error(position, "taskmaster: exit_code variable set but argument are missing");
+				}
+				else
+					print_error(position, "taskmaster: exit_code bad syntax");
+			break;
+
 			default:
 				if (args[0][0] != '/')
 					print_error(position, "unknown variable " + args[0]);
@@ -309,6 +334,8 @@ program		get_program_args(int start, vector<string> data, int end, string name)
 	tmp.print_on_taskmaster = false;
 	tmp.auto_restart = false;
 	tmp.start_time = 0;
+	tmp.exit_code = 0;
+	tmp.stop_time = 0;
 	tmp.pid = 0;
 	while (start != end)
 	{

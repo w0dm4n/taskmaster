@@ -20,7 +20,7 @@ string get_current_time()
     struct tm  tstruct;
     char       buff[80];
     tstruct = *localtime(&now);
-    strftime(buff, sizeof(buff), "%m/%d at %H:%M", &tstruct);
+    strftime(buff, sizeof(buff), "%m/%d at %H:%M:%S", &tstruct);
     return (buff);
 }
 
@@ -48,7 +48,7 @@ void		add_in_logs(string file_path, string content)
 			fd = open(file_path.c_str(), O_RDWR);
 		}
 	}
-	content += "\n"; // ADD [DAYS-HOUR] IN FRONT OF THE MSG
+	content += "\n";
 	while ((res = read(fd, buffer, 1024)) > 0)
 	{
 		buffer[res] = '\0';

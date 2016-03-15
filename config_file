@@ -1,6 +1,5 @@
 [taskmaster]
-%taskmaster_log_file;~/Desktop/work/taskmaster/test;
-//%auto_restart_timer;10;
+%taskmaster_log_file;~/Desktop/work/taskmaster/logs/taskmaster.log;
 #new_program{test}
 (
 	%executable_path;/bin/ls;
@@ -11,14 +10,13 @@
 	%auto_start;false;
 	%exit_signal;SIGTERM;
 	//%stderror_to_file;~/Desktop/work/taskmaster/logs/laflemme.log;
-	%stdout_to_file;~/Desktop/work/taskmaster/ls.log
+	%stdout_to_file;~/Desktop/work/taskmaster/logs/ls.log
 	//close_stdout;true
 	//close_stderror;true
 	%set_umask;1234
 	//%print_on_taskmaster;false
-	%auto_restart;true
-	%stop_time;10
-	%start_time;100;
+	%stop_time;20
+	%exit_code;-1
 )
 #new_program{bonjour}
 (

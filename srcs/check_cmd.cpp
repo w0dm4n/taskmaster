@@ -23,6 +23,12 @@ vector<string>	clear_args(vector<string> cmd_args)
 	return (cmd_args);
 }
 
+static void			exit_taskmaster()
+{
+	add_in_logs(TaskMasterValue::Current().LogFilePath, "Taskmaster exited.");
+	exit(0);
+}
+
 vector<program>	check_cmd(string cmd, vector<string> cmd_args, vector<program> program_list)
 {
 	write(1, "\n", 1);
@@ -39,7 +45,7 @@ vector<program>	check_cmd(string cmd, vector<string> cmd_args, vector<program> p
 	else if (cmd == "restart")
 		program_list = restart_program(cmd_args, program_list);
 	else if (cmd == "exit")
-		(!cmd_args.size()) ? exit(0) : print_fd("*** Arguments are invalid (see help <topic>", 2);
+		(!cmd_args.size()) ? exit_taskmaster() : print_fd("*** Arguments are invalid (see help <topic>", 2);
 	else if (cmd == "edit")
 		program_list = edit(cmd_args, program_list);
 	else

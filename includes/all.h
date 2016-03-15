@@ -37,6 +37,7 @@
 # define AUTO_RESTART 22
 # define START_TIME 23
 # define STOP_TIME 24
+# define EXIT_CODE 25
 # define WHITE_COLOR "\e[1;37m"
 # define ENTRY 10
 # define BACKSPACE 127
@@ -71,6 +72,7 @@ class program
 	int				stop_time;
 	vector<string>	Environment_Data;
 	int				pid;
+	int				exit_code;
 	void		   GetEnvToSet(vector<string> env_to_set);
 	void		   FindAndSet(char *variable, char *value);
 };

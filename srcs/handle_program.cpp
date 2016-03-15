@@ -150,7 +150,7 @@ vector<program>		handle_program(program to, int pos, vector<program> program_lis
 			}
 			chdir(to.working_dir.c_str());
 			execve(to.executable_path.c_str(), get_program_args(to.executable_path, to.executable_argument), env);
-			exit(0);
+			exit(program_list[pos].exit_code);
 		}
 		else
 		{
