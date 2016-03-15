@@ -61,4 +61,11 @@
 	%working_dir;~/;
 	%set_umask;7777;
 )
+#new_program{WSH_ALOR}
+(
+	%executable_path;/bin/cat;
+	%set_env;blabla;lol;
+	%working_dir;~/;
+	%set_umask;7777;
+)
 [end_taskmaster]

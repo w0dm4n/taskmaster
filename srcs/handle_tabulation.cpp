@@ -32,6 +32,37 @@ static		void update_stdout()
 	}
 }
 
+static		void delete_name(vector<program> program_list)
+{
+	int i = UserEntry::Current().cmd.length();
+	while (UserEntry::Current().cmd[i] != ' ')
+	{
+		tputs(tgetstr((char*)"dc", NULL), 0, cursor_do);
+		tputs(tgetstr((char*)"le", NULL), 0, cursor_do);
+		UserEntry::Current().cmd[i] = '\0';
+		UserEntry::Current().cmd.erase(i, 1);
+		i--;
+	}
+	i++;
+	UserEntry::Current().cmd[i] = '\0';
+	UserEntry::Current().cmd.erase(i, 1);
+	UserEntry::Current().cmd.insert(i, program_list[UserEntry::Current().auto_completion_get].program_name + "\0");
+	i = 0;
+	print(" ");
+	while (program_list[UserEntry::Current().auto_completion_get].program_name[i])
+	{
+		write(1, &program_list[UserEntry::Current().auto_completion_get].program_name[i], 1);
+		i++;
+	}
+	UserEntry::Current().cursor = 0;
+	i = 0;
+	while (i != UserEntry::Current().cmd.length())
+	{
+		UserEntry::Current().cursor++;
+		i++;
+	}
+}
+
 void		get_command()
 {
 		if (UserEntry::Current().cmd == "edit")
@@ -91,7 +122,14 @@ void		get_command()
 		}
 }
 
-void		get_program_name()
+void		get_program_name(vector<program> program_list)
 {
-	print("SLT");
+	if (UserEntry::Current().auto_completion_get != program_list.size())
+	{
+		if (UserEntry::Current().cmd.find(' ') != -1)
+			delete_name(program_list);
+		UserEntry::Current().auto_completion_get++;
+	}
+	else
+		UserEntry::Current().auto_completion_get = 0;
 }

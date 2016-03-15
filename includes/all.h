@@ -104,6 +104,7 @@ class UserEntry
 	int cursor;
 	vector<string> cmd_history;
 	int history_pos;
+	int auto_completion_get;
 };
 
 class config_infos
@@ -150,5 +151,5 @@ program				check_variable_and_set(string line, program tmp, int position);
 void				get_command();
 int					cursor_do(int to_print);
 void				refresh_stdout();
-void				get_program_name();
+void				get_program_name(vector<program> program_list);
 #endif

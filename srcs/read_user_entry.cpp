@@ -90,7 +90,7 @@ void	delete_current_and_print_history(string to_set, string tmp)
 	}
 }
 
-void	read_entry(string tmp_line)
+void	read_entry(string tmp_line, vector<program> program_list)
 {
 	struct termios	*term;
 	int				ascii_value;
@@ -174,7 +174,7 @@ void	read_entry(string tmp_line)
 		}
 	}
 	else if (ascii_value == TABULATION)
-		((UserEntry::Current().cmd.find(' ')) == -1) ? get_command() : get_program_name();
+		((UserEntry::Current().cmd.find(' ')) == -1) ? get_command() : get_program_name(program_list);
 	else if (ft_isprint(ascii_value))
 	{
 		if (UserEntry::Current().cmd[(UserEntry::Current().cursor + 1)])
@@ -212,6 +212,7 @@ void	reset_value()
 		i++;
 	}
 	UserEntry::Current().cmd.clear();
+	UserEntry::Current().auto_completion_get = 0;
 }
 
 string trim(const string &s)
@@ -231,7 +232,7 @@ void	read_user_entry(vector<program> program_list)
 {
 	string tmp_line;
 
-	read_entry(tmp_line);
+	read_entry(tmp_line, program_list);
 	if (UserEntry::Current().end_cmd)
 	{
 		UserEntry::Current().cmd = trim(UserEntry::Current().cmd);

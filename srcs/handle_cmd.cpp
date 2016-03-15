@@ -44,7 +44,7 @@ vector<string>		get_args(string cmd)
 				tmp += cmd[i];
 				i++;
 			}
-			if (tmp.length())
+			if (ft_is_all_print((char*)tmp.c_str()) || tmp.find(';') != -1)
 				tmp_args.push_back(tmp);
 			tmp.clear();
 		}
