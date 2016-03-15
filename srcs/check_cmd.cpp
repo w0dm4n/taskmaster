@@ -38,6 +38,10 @@ vector<program>	check_cmd(string cmd, vector<string> cmd_args, vector<program> p
 		program_list = stop_program(cmd_args, program_list);
 	else if (cmd == "restart")
 		program_list = restart_program(cmd_args, program_list);
+	else if (cmd == "exit")
+		(!cmd_args.size()) ? exit(0) : print_fd("*** Arguments are invalid (see help <topic>", 2);
+	else if (cmd == "edit")
+		program_list = edit(cmd_args, program_list);
 	else
 		print_fd("*** Unknown syntax: " + cmd, 2);
 	cmd_args = clear_args(cmd_args);

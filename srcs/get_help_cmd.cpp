@@ -21,7 +21,7 @@ void	get_help_cmd(vector<string> args)
 		print("\n");
 		print("default commands (type help <topic>):\n");
 		print("=====================================\n");
-		print("status	  start	  stop	 reload    restart");
+		print("status	  start	  stop	 reload    restart    edit   exit");
 		print("\n");
 	}
 	else
@@ -45,9 +45,7 @@ void	get_help_cmd(vector<string> args)
 			print ("start all               Start all process");
 		}
 		else if (topic == "reload")
-		{
 			print ("reload config		Reload the config file");
-		}
 		else if (topic == "stop")
 		{
 			print ("stop <name>			Stop multiple or single process by name\n");
@@ -58,6 +56,10 @@ void	get_help_cmd(vector<string> args)
 			print("restart <name>		Restart multiple or single process by name\n");
 			print("restart all             Restart all process");
 		}
+		else if (topic == "edit")
+			print("edit <program_name> <variable;value>		Edit or add a variable on a program");
+		else if (topic == "exit")
+			print("exit				Quit taskmaster");
 		else
 			print_fd("*** No help on " + topic, 2);
 	}

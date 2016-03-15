@@ -15,10 +15,13 @@
 vector<program>		restart_program(vector<string> args, vector<program> program_list)
 {
 	if (!args.size())
+	{
+		print_fd("*** Arguments are missing (see help <topic>)", 2);		
 		return (program_list);
+	}
 	if (!args[0].length())
 	{
-		print_error(-1, "*** Arguments are missing (see help <topic>");
+		print_fd("*** Arguments are missing (see help <topic>)", 2);	
 		return (program_list);
 	}
 	else

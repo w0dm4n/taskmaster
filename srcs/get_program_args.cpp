@@ -47,7 +47,7 @@ static int			get_variable_state(string var)
 	return (UNKNOWN_VARIABLE);
 }
 
-static program		check_variable_and_set(string line, program tmp, int position)
+program		check_variable_and_set(string line, program tmp, int position)
 {
 	vector<string>	args;
 	int				i;

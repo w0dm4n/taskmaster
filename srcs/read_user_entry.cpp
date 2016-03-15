@@ -173,6 +173,8 @@ void	read_entry(string tmp_line)
 			delete_current_and_print_history(UserEntry::Current().cmd_history[UserEntry::Current().history_pos], tmp_line);
 		}
 	}
+	else if (ascii_value == TABULATION)
+		((UserEntry::Current().cmd.find(' ')) == -1) ? get_command() : get_program_name();
 	else if (ft_isprint(ascii_value))
 	{
 		if (UserEntry::Current().cmd[(UserEntry::Current().cursor + 1)])

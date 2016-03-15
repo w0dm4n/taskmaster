@@ -45,6 +45,7 @@
 # define ARROW_RIGHT 185
 # define ARROW_LEFT 186
 # define CLEAR_SCREEN 12
+# define TABULATION 9
 # define TO_PRINT_FOR_CLEAR "\033[2J"
 # define DEFAULT_ARGS_SIZE 1024
 # define DEFAULT_ENV_SIZE 1024
@@ -144,4 +145,10 @@ vector<program> 	stop_program(vector<string> args, vector<program> program_list)
 void				print_nbr_fd(int nbr, int fd);
 vector<program>		restart_program(vector<string> args, vector<program> program_list);
 int					ft_isdigit(int c);
+vector<program>		edit(vector<string> args, vector<program> program_list);
+program				check_variable_and_set(string line, program tmp, int position);
+void				get_command();
+int					cursor_do(int to_print);
+void				refresh_stdout();
+void				get_program_name();
 #endif
