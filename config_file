@@ -3,7 +3,7 @@
 #new_program{test}
 (
 	%executable_path;/bin/ls;
-	%executable_argument;-l -R -a /;
+	%executable_argument;-l -R -a;
 	%set_env;test;blabla;
 	%set_env;bonjour;slt;
 	%working_dir;~/Desktop;

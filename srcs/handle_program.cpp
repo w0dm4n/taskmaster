@@ -59,7 +59,7 @@ char		**get_program_env(vector<string> data)
 	char	**env_new;
 	int		i = 0;
 
-	if (!(env_new = (char**)malloc(sizeof(char*) * 100000)))
+	if (!(env_new = (char**)malloc(sizeof(char*) * 8192)))
 		return (NULL);
 	while (env_new[i])
 	{
