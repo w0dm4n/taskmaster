@@ -36,11 +36,12 @@ void	auto_restart_program(vector<program> program_list)
 		while (1)
 		{
 			i = 0;
-			sleep(2);
 			while (i != program_list.size())
 			{
 				if (program_list[i].auto_restart)
 				{
+					if (program_list[i].time_for_restart != 0)
+						sleep(program_list[i].time_for_restart);
 					if (program_list[i].pid == 0)
 					{
 						args[0] = program_list[i].program_name;
@@ -83,7 +84,7 @@ void	handle_config(string config_name)
 			}
 			print("*** Auto starting program end ***\n\n");
 		}
-		//auto_restart_program(program_list);
+		auto_restart_program(program_list);
 		TaskMasterValue::Current().ConfigFileName = config_name;
 		print("taskmaster> ");
 		read_user_entry(program_list);

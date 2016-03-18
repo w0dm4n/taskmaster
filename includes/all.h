@@ -73,6 +73,7 @@ class program
 	vector<string>	Environment_Data;
 	int				pid;
 	int				exit_code;
+	int				time_for_restart;
 	void		   GetEnvToSet(vector<string> env_to_set);
 	void		   FindAndSet(char *variable, char *value);
 };

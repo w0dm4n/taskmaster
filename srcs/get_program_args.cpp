@@ -230,12 +230,14 @@ program		check_variable_and_set(string line, program tmp, int position)
 			break;
 
 			case AUTO_RESTART:
-				if (args.size() == 3)
+				if (args.size() == 3 || args.size() == 4)
 				{
-					if (args[1].length())
+					if (args[1].length() && args[2].length())
 					{
 						if (args[1] == "true")
 							tmp.auto_restart = true;
+						if (atoi(args[2].c_str()) != 0 && atoi(args[2].c_str()) <= 1000)
+							tmp.time_for_restart = atoi(args[2].c_str());
 					}
 					else
 						print_error(position, "taskmaster: auto_restart variable set but argument are missing");
