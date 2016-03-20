@@ -35,6 +35,8 @@ vector<string> get_environment_vector(char **env)
 	int				i;
 	vector<string> new_env;
 
+	if (!env)
+		return (new_env);
 	while (env[i])
 	{
 		new_env.push_back(env[i]);

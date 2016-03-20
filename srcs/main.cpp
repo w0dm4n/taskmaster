@@ -12,6 +12,37 @@
 
 #include <all.h>
 
+int		check_env(char **env)
+{
+	int		i = 0;
+	int		value_found = 0;
+	bool	term = false;
+	bool	home = false;
+
+	if (!env)
+		return (0);
+	while (env[i])
+	{
+		if (strstr(env[i], "TERM"))
+			if (strstr(env[i], "xterm-256color"))
+				term = true;
+		if (strstr(env[i], "HOME"))
+			home = true;
+		i++;
+	}
+	if (!term)
+	{
+		cerr << "taskmaster: Invalid environment : TERM is missing or invalid !" << endl;
+		return (0);
+	}
+	else if (!home)
+	{
+		cerr << "taskmaster: Invalid environment: HOME is missing or invalid !" << endl;
+		return (0);
+	}
+	return (1);
+}
+
 int		main(int argc, char **argv, char **env)
 {
 	int i;
@@ -21,6 +52,8 @@ int		main(int argc, char **argv, char **env)
 	string current_flag;
 	string config_file;
 
+	if (check_env(env) == 0)
+		return (-1);
 	i = 1;
 	args = 0;
 	args = false;
