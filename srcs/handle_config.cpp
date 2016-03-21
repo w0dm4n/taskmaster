@@ -68,6 +68,8 @@ void	handle_config(string config_name)
 	UserEntry::Current().auto_completion_get = 0;
 	if (config.check_if_config_exist())
 		program_list = config.read_config(program_list);
+	if (!TaskMasterValue::Current().LogFilePath.length())
+		TaskMasterValue::Current().LogFilePath = "taskmaster.log";
 	if (!TaskMasterValue::Current().LogFilePathExist)
 		add_in_logs(TaskMasterValue::Current().LogFilePath, "Configuration file generated");
 	if (check_all_program(program_list))

@@ -1,0 +1,8 @@
+[taskmaster]
+#new_program{salut}
+(
+	%executable_path;~/Desktop/work/ft_ls/ft_ls;
+	%executable_argument;-l -a -R;
+	%working_dir;~/Desktop/work/;
+)
+[end_taskmaster]
