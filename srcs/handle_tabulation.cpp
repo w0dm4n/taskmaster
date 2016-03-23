@@ -126,7 +126,7 @@ void		get_program_name(vector<program> program_list)
 {
 	if (UserEntry::Current().auto_completion_get != program_list.size())
 	{
-		if (UserEntry::Current().cmd.find(' ') != -1)
+		if ((UserEntry::Current().cmd.find(' ') != -1) && !UserEntry::Current().cmd[(UserEntry::Current().cursor + 1)])
 			delete_name(program_list);
 		UserEntry::Current().auto_completion_get++;
 	}

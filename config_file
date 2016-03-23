@@ -17,7 +17,7 @@
 	//%print_on_taskmaster;true
 	%stop_time;20
 	%exit_code;-1
-	%auto_restart;true;20
+	//%auto_restart;true;20
 )
 #new_program{bonjour}
 (
@@ -50,7 +50,7 @@
 	%executable_path;/usr/bin/touch
 	%executable_argument;BJR
 	%working_dir;~/Desktop/work/taskmaster
-	%set_umask;7777
+	%set_umask;7777;
 	%print_on_taskmaster;false;
 )
 #new_program{gygylenoob}
@@ -66,5 +66,12 @@
 	%set_env;blabla;lol;
 	%working_dir;~/;
 	%set_umask;7777;
+)
+#new_program{AAAAAAAA}
+(
+	%executable_path;/bin/ls;
+	//%print_on_taskmaster;true;
+	%stdout_to_file;~/Desktop/work/bjr.log
+	%working_dir;~/Desktop;
 )
 [end_taskmaster]
