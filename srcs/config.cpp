@@ -124,6 +124,6 @@ vector<program> config_infos::read_config(vector<program> program_list)
 		flux.close();
 	}
 	else
-		cerr << "taskmaster: invalid config file" << endl;
+		print_error(-1, "taskmaster: invalid configuration file");
 	return (program_list);
 }
