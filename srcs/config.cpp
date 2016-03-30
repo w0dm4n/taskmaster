@@ -99,13 +99,13 @@ vector<program> config_infos::read_config(vector<program> program_list)
 			config_content.push_back(buff);
 		if (!config_content.size())
 		{
-			cerr << "taskmaster: empty configuration file" << endl;
+			print_error(-1, "taskmaster: empty configuration file");
 			return (program_list);
 		}
 		if (config_content[0] != "[taskmaster]" ||
 		 config_content[(config_content.size() - 1)] != "[end_taskmaster]")
 		{
-			cerr << "taskmaster: header not present in the configuration ([taskmaster] ... [end_taskmaster])" << endl;
+			print_error(-1, "taskmaster: header not present in the configuration ([taskmaster] ... [end_taskmaster])");
 			return (program_list);
 		}
 		else

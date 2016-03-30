@@ -33,3 +33,22 @@
 [03/30 at 15:22:30] The program WSH_ALOR was stopped.
 [03/30 at 15:22:30] The program AAAAAAAA was stopped.
 [03/30 at 15:23:27] Taskmaster exited.
+[03/30 at 20:21:20] The program test was launched.
+[03/30 at 20:21:42] The program gygylenoob was launched.
+[03/30 at 20:21:42] The program AAAAAAAA was launched.
+[03/30 at 20:21:42] The program test was launched.
+[03/30 at 20:21:42] Can't launch the program salut due to an invalid working dir
+[03/30 at 20:21:42] The program petit_test was launched.
+[03/30 at 20:21:42] Can't launch the program bonjour due to an invalid working dir
+[03/30 at 20:21:45] The program petit_test was stopped.
+[03/30 at 20:21:45] The program gygylenoob was stopped.
+[03/30 at 20:21:45] The program AAAAAAAA was stopped.
+[03/30 at 20:22:05] The program test was stopped.
+[03/30 at 20:22:30] The config file was reloaded.
+[03/30 at 20:24:19] The config file was reloaded.
+[03/30 at 20:30:21] Taskmaster exited.
+[03/30 at 20:30:38] The program test was launched.
+[03/30 at 20:32:14] The config file was reloaded.
+[03/30 at 20:34:48] The config file was reloaded.
+[03/30 at 20:34:51] The config file was reloaded.
+[03/30 at 20:34:53] Taskmaster exited.
