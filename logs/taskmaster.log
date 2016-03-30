@@ -9,3 +9,27 @@
 [03/23 at 20:07:16] The program gygylenoob was stopped.
 [03/23 at 20:07:16] The program AAAAAAAA was stopped.
 [03/23 at 20:08:02] Taskmaster exited.
+[03/29 at 11:10:33] The program test was launched.
+[03/30 at 15:11:42] Taskmaster exited.
+[03/30 at 15:17:17] The program test was launched.
+[03/30 at 15:18:32] The program test was launched.
+[03/30 at 15:18:57] The program test was stopped.
+[03/30 at 15:19:50] The config file was reloaded.
+[03/30 at 15:19:56] The program test was launched.
+[03/30 at 15:20:27] The program test was stopped.
+[03/30 at 15:20:58] The config file was reloaded.
+[03/30 at 15:21:41] The program test was launched.
+[03/30 at 15:22:26] The program AAAAAAAA was launched.
+[03/30 at 15:22:26] Can't launch the program bonjour due to an invalid working dir
+[03/30 at 15:22:26] The program WSH_ALOR was launched.
+[03/30 at 15:22:26] The program gygylenoob was launched.
+[03/30 at 15:22:26] The program petit_test was launched.
+[03/30 at 15:22:26] Can't launch the program salut due to an invalid working dir
+[03/30 at 15:22:26] The program create_file was launched.
+[03/30 at 15:22:26] Can't launch the program bonjour due to an invalid working dir
+[03/30 at 15:22:30] The program petit_test was stopped.
+[03/30 at 15:22:30] The program create_file was stopped.
+[03/30 at 15:22:30] The program gygylenoob was stopped.
+[03/30 at 15:22:30] The program WSH_ALOR was stopped.
+[03/30 at 15:22:30] The program AAAAAAAA was stopped.
+[03/30 at 15:23:27] Taskmaster exited.

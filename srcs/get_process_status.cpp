@@ -58,7 +58,14 @@ void		print_program_informations(vector<program> program_list, int p_i)
 		print("\n");
 	}
 	print ("Process actually launched : ");
-	(program_list[p_i].pid) ? print("TRUE") : print("FALSE");
+	if (program_list[p_i].pid)
+	{
+		print("TRUE (");
+		print_nbr(program_list[p_i].pid);
+		print(")");
+	}
+	else
+		print("FALSE");
 	print("\n");
 	if (program_list[p_i].stdout_to_file.length())
 		print ("Redirect STDOUT from the executable to : " + program_list[p_i].stdout_to_file + "\n");

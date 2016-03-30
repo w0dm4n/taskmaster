@@ -18,6 +18,7 @@
 #include <sys/stat.h> 
 #include <signal.h>
 #include <errno.h>
+#include <unistd.h>
 # define VAR_SYNTHAX '%'
 # define NEW_PROGRAM_SYNTHAX '#'
 # define LOG_FILE 0
