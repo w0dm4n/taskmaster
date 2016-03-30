@@ -12,13 +12,6 @@
 
 #ifndef ALL_H
 # define ALL_H
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <sys/stat.h> 
-#include <signal.h>
-#include <errno.h>
-#include <unistd.h>
 # define VAR_SYNTHAX '%'
 # define NEW_PROGRAM_SYNTHAX '#'
 # define LOG_FILE 0
@@ -51,6 +44,15 @@
 # define TO_PRINT_FOR_CLEAR "\033[2J"
 # define DEFAULT_ARGS_SIZE 1024
 # define DEFAULT_ENV_SIZE 1024
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sys/stat.h> 
+#include <signal.h>
+#include <errno.h>
+#include <unistd.h>
+
 using namespace std;
 class program
 {
@@ -87,12 +89,12 @@ class TaskMasterValue
         static TaskMasterValue Singleton;
         return Singleton;
     }
-    string LogFilePath;
-    bool LogFilePathExist;
-    string ConfigFileName;
-    bool ExitProgramOnError;
-    int Errors;
-    vector<string> DefaultEnvironment;
+    string 			LogFilePath;
+    bool 			LogFilePathExist;
+    string			ConfigFileName;
+    bool 			ExitProgramOnError;
+    int 			Errors;
+    vector<string>	DefaultEnvironment;
 };
 
 class UserEntry
@@ -103,43 +105,43 @@ class UserEntry
 		static UserEntry Singleton;
 		return Singleton;
 	}
-	bool end_cmd;
-	string cmd;
-	int cursor;
-	vector<string> cmd_history;
-	int history_pos;
-	int auto_completion_get;
+	bool 			end_cmd;
+	string 			cmd;
+	int 			cursor;
+	vector<string> 	cmd_history;
+	int 			history_pos;
+	int 			auto_completion_get;
 };
 
 class config_infos
 {
 	public:
-	int check_if_config_exist();
+	int 			check_if_config_exist();
 	vector<program> read_config(vector<program> program_list);
 	vector<program> get_config_value(vector<program> program_list, vector<string> data);
-	string config_file_name;
+	string 			config_file_name;
 };
 
-void	handle_config(string config_name);
-void	handle_taskmaster_var(string line, int position);
-char	**ft_strsplit(char const *s, char c);
-int		ft_strlen(const char *str);
-void	print_error(int position, string message);
-program		get_new_program(vector<string> data, int i);
-vector<string> get_args(string line, vector<string> args, char delimiter);
-program		get_program_args(int start, vector<string> data, int end, string name);
-string 		get_correct_path(string path);
-bool		check_all_program(vector<program> program_list);
-void		read_user_entry(vector<program> program_list);
-void		print(string str);
-void		print_fd(string str, int fd);
-int			ft_isprint(int c);
-void		print_nbr(int nbr);
+void				handle_config(string config_name);
+void				handle_taskmaster_var(string line, int position);
+char				**ft_strsplit(char const *s, char c);
+int					ft_strlen(const char *str);
+void				print_error(int position, string message);
+program				get_new_program(vector<string> data, int i);
+vector<string>		get_args(string line, vector<string> args, char delimiter);
+program				get_program_args(int start, vector<string> data, int end, string name);
+string 				get_correct_path(string path);
+bool				check_all_program(vector<program> program_list);
+void				read_user_entry(vector<program> program_list);
+void				print(string str);
+void				print_fd(string str, int fd);
+int					ft_isprint(int c);
+void				print_nbr(int nbr);
 vector<program>		handle_cmd(string cmd, vector<program> program_list);
 vector<program>		check_cmd(string cmd, vector<string> cmd_args, vector<program> program_list);
-void		get_help_cmd(vector<string> args);
-int			ft_is_all_print(char *str);
-void		get_process_status(vector<string> args, vector<program> program_list);
+void				get_help_cmd(vector<string> args);
+int					ft_is_all_print(char *str);
+void				get_process_status(vector<string> args, vector<program> program_list);
 vector<program>		reload(vector<string> args, vector<program> program_list);
 vector<program>		start_program(vector<string> args, vector<program> program_list);
 vector<program>		handle_program(program to, int pos, vector<program> program_list);
